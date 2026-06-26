@@ -18,9 +18,6 @@ class AdminController {
 
     @GetMapping("/default")
     public ResponseEntity<User> admin() throws URISyntaxException {
-        HttpHeaders headers = new HttpHeaders();
-        User user = new User("superSecretEmail@Geroge.com");
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
-
+        return null;
     }
 }

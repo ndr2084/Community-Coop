@@ -1,5 +1,8 @@
 package com.example.demo.configuration;
 
+import com.example.demo.entity.Profile;
+import com.example.demo.entity.User;
+import com.example.demo.repository.ProfileRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -24,6 +27,12 @@ import java.util.Set;
 @EnableWebSecurity
 class SecurityConfiguration {
 
+    private final ProfileRepository createUserFromSubject;
+
+    public SecurityConfiguration(ProfileRepository createUserFromSubject) {
+        this.createUserFromSubject = createUserFromSubject;
+    }
+
     @Bean
     @Order(0)
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -36,7 +45,7 @@ class SecurityConfiguration {
                 )
 
                 .oauth2Login(oauth2 -> oauth2
-                        .defaultSuccessUrl("http://localhost:4200/home", true)
+                        .defaultSuccessUrl("http://localhost:4200/signup", true)
                         .userInfoEndpoint(userInfo -> userInfo
                                 .oidcUserService(oidcUserService()))
                 )
@@ -56,6 +65,10 @@ class SecurityConfiguration {
         return request -> {
             OidcUser user = delegate.loadUser(request);
             String email = user.getAttribute("email");
+            String subject = user.getAttribute("sub");
+            Profile profile = new Profile(subject, email);
+            createUserFromSubject.save(profile);
+
 
             Set<GrantedAuthority> authorities = new HashSet<>(user.getAuthorities());
             authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
