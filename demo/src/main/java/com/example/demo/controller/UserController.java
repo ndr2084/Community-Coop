@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.SubjectService;
+import com.example.demo.service.SubjectService;
 import com.example.demo.entity.Profile;
 import com.example.demo.entity.SignUpForm;
 import com.example.demo.repository.ProfileRepository;

@@ -1,6 +1,4 @@
 package com.example.demo.configuration;
-
-import com.example.demo.SubjectService;
 import com.example.demo.entity.Profile;
 import com.example.demo.repository.ProfileRepository;
 import org.jspecify.annotations.NonNull;
@@ -29,11 +27,11 @@ import java.util.Set;
 class SecurityConfiguration {
 
     private final ProfileRepository createUserFromInitialSignup;
-    private final SubjectService subjectService;
+    private final OpaqueTokenConfiguration opaqueTokenConfiguration;
 
-    public SecurityConfiguration(ProfileRepository createUserFromInitialSignup, SubjectService subjectService) {
+    public SecurityConfiguration(ProfileRepository createUserFromInitialSignup, OpaqueTokenConfiguration opaqueTokenConfiguration) {
         this.createUserFromInitialSignup = createUserFromInitialSignup;
-        this.subjectService = subjectService;
+        this.opaqueTokenConfiguration = opaqueTokenConfiguration;
     }
 
     @Bean
@@ -81,7 +79,7 @@ class SecurityConfiguration {
                 String subject = user.getAttribute("sub");
                 Profile profile = new Profile(email, authority, subject);
                 createUserFromInitialSignup.save(profile);
-                subjectService.setSubject(subject);
+                opaqueTokenConfiguration.setOpaqueToken(subject);
 
                 return new DefaultOidcUser(authorities, user.getIdToken(), user.getUserInfo());
             }
