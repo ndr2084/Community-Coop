@@ -1,8 +1,9 @@
 package com.example.demo.configuration;
 
+import com.example.demo.SubjectService;
 import com.example.demo.entity.Profile;
-import com.example.demo.entity.User;
 import com.example.demo.repository.ProfileRepository;
+import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -18,7 +19,7 @@ import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,10 +28,12 @@ import java.util.Set;
 @EnableWebSecurity
 class SecurityConfiguration {
 
-    private final ProfileRepository createUserFromSubject;
+    private final ProfileRepository createUserFromInitialSignup;
+    private final SubjectService subjectService;
 
-    public SecurityConfiguration(ProfileRepository createUserFromSubject) {
-        this.createUserFromSubject = createUserFromSubject;
+    public SecurityConfiguration(ProfileRepository createUserFromInitialSignup, SubjectService subjectService) {
+        this.createUserFromInitialSignup = createUserFromInitialSignup;
+        this.subjectService = subjectService;
     }
 
     @Bean
@@ -61,23 +64,27 @@ class SecurityConfiguration {
         List<String> admins = List.of(
                 "ndrous2084@gmail.com"
         );
+        return new OAuth2UserService<OidcUserRequest, OidcUser> (){
+            @Override
+            public OidcUser loadUser(@NonNull OidcUserRequest request) {
+                OidcUser user = delegate.loadUser(request);
+                String email = user.getAttribute("email");
+                String authority = "USER";
+                Set<GrantedAuthority> authorities = new HashSet<>(user.getAuthorities());
+                authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 
-        return request -> {
-            OidcUser user = delegate.loadUser(request);
-            String email = user.getAttribute("email");
-            String subject = user.getAttribute("sub");
-            Profile profile = new Profile(subject, email);
-            createUserFromSubject.save(profile);
+                if (admins.contains(email)) {
+                    authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+                    authority = "ADMIN";
+                }
 
+                String subject = user.getAttribute("sub");
+                Profile profile = new Profile(email, authority, subject);
+                createUserFromInitialSignup.save(profile);
+                subjectService.setSubject(subject);
 
-            Set<GrantedAuthority> authorities = new HashSet<>(user.getAuthorities());
-            authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-            if (admins.contains(email)) {
-                authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+                return new DefaultOidcUser(authorities, user.getIdToken(), user.getUserInfo());
             }
-
-            return new DefaultOidcUser(authorities, user.getIdToken(), user.getUserInfo());
         };
     }
-
 }
