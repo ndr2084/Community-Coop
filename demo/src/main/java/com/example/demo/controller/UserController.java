@@ -1,9 +1,10 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.SubjectService;
-import com.example.demo.entity.Profile;
-import com.example.demo.entity.SignUpForm;
-import com.example.demo.repository.ProfileRepository;
+
+import com.example.demo.configuration.ResourceOwnerConfiguration;
+import com.example.demo.table.Profile;
+import com.example.demo.repository.UserRepository;
+import com.example.demo.table.User;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +15,12 @@ import java.util.Optional;
 @RequestMapping("/users")
 class UserController {
 
-    public ProfileRepository profileRepository;
-    public SubjectService subjectService;
+    public UserRepository userRepository;
+    public ResourceOwnerConfiguration resourceOwnerConfiguration;
 
-    UserController(ProfileRepository profileRepository, SubjectService subjectService) {
-        this.profileRepository = profileRepository;
-        this.subjectService = subjectService;
+    UserController(UserRepository userRepository, ResourceOwnerConfiguration resourceOwnerConfiguration) {
+        this.userRepository = userRepository;
+        this.resourceOwnerConfiguration = resourceOwnerConfiguration;
     }
 
     @PutMapping("/create")
@@ -33,22 +34,22 @@ class UserController {
         /*TODO:
          *1. Find way to determine if first and last name are set. This will be forwarded to the frontend, which will handle redriection
          */
-        Optional<Profile> profile = profileRepository.findById(subjectService.getSubject());
-        if (profile.isPresent()) {
-            return new ResponseEntity<>(subjectService.getSubject(), HttpStatusCode.valueOf(200));
+        Optional<User> user = userRepository.findById(resourceOwnerConfiguration.getOpaqueToken());
+        if (user.isPresent()) {
+            return new ResponseEntity<>(resourceOwnerConfiguration.getOpaqueToken(), HttpStatusCode.valueOf(200));
         }
         return new ResponseEntity<>(HttpStatusCode.valueOf(404));
     }
 
+
     @PutMapping("/profile")
     public void createProfile(@RequestBody SignUpForm signUpForm) {
-        System.out.println(subjectService.getSubject());
-        Optional<Profile> profile = profileRepository.findById(subjectService.getSubject());
+        System.out.println(resourceOwnerConfiguration.getOpaqueToken());
+        Optional<User> profile = userRepository.findById(resourceOwnerConfiguration.getOpaqueToken());
         if (profile.isPresent()) {
             profile.get().setFirstName(signUpForm.firstName());
             profile.get().setLastName(signUpForm.lastName());
-            profileRepository.save(profile.get());
+            userRepository.save(profile.get());
         }
-
     }
 }

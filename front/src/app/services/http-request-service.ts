@@ -14,8 +14,8 @@ export class HttpRequestService {
     return this.httpClient.get('http://localhost:8080/users/profile', {observe: 'response'});
   }
 
-  userCreation(firstNameArg: string | undefined, secondNameArg: string | undefined) : Observable<any>{
-    return this.httpClient.post('http://localhost:8080/users/create', {
+  createProfile(firstNameArg: string, secondNameArg: string) : Observable<any>{
+    return this.httpClient.put('http://localhost:8080/users/profile', {
       firstName: firstNameArg,
       lastName: secondNameArg
     }

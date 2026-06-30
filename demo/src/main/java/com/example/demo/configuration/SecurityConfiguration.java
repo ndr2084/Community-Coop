@@ -1,6 +1,6 @@
 package com.example.demo.configuration;
-import com.example.demo.entity.Profile;
-import com.example.demo.repository.ProfileRepository;
+import com.example.demo.table.User;
+import com.example.demo.repository.UserRepository;
 import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,12 +26,13 @@ import java.util.Set;
 @EnableWebSecurity
 class SecurityConfiguration {
 
-    private final ProfileRepository createUserFromInitialSignup;
-    private final OpaqueTokenConfiguration opaqueTokenConfiguration;
+    private final ResourceOwnerConfiguration resourceOwnerConfiguration;
+    private final UserRepository userRepository;
 
-    public SecurityConfiguration(ProfileRepository createUserFromInitialSignup, OpaqueTokenConfiguration opaqueTokenConfiguration) {
-        this.createUserFromInitialSignup = createUserFromInitialSignup;
-        this.opaqueTokenConfiguration = opaqueTokenConfiguration;
+    public SecurityConfiguration(ResourceOwnerConfiguration resourceOwnerConfiguration,
+                                 UserRepository userRepository) {
+        this.resourceOwnerConfiguration = resourceOwnerConfiguration;
+        this.userRepository = userRepository;
     }
 
     @Bean
@@ -67,6 +68,7 @@ class SecurityConfiguration {
             public OidcUser loadUser(@NonNull OidcUserRequest request) {
                 OidcUser user = delegate.loadUser(request);
                 String email = user.getAttribute("email");
+                String subject = user.getAttribute("sub");
                 String authority = "USER";
                 Set<GrantedAuthority> authorities = new HashSet<>(user.getAuthorities());
                 authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
@@ -75,11 +77,11 @@ class SecurityConfiguration {
                     authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
                     authority = "ADMIN";
                 }
+                resourceOwnerConfiguration.setResourceOwner(email, authority, subject);
+                User userinfo = new User(subject);
+                userinfo.setUser(email, authority);
+                userRepository.save(userinfo);
 
-                String subject = user.getAttribute("sub");
-                Profile profile = new Profile(email, authority, subject);
-                createUserFromInitialSignup.save(profile);
-                opaqueTokenConfiguration.setOpaqueToken(subject);
 
                 return new DefaultOidcUser(authorities, user.getIdToken(), user.getUserInfo());
             }

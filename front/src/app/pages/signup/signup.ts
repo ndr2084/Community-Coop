@@ -24,8 +24,7 @@ export class Signup {
   ngOnInit(){
     this.httpRequestService.getProfile().subscribe({
       next : (profile) =>{
-        if(profile.status === 200){
-          window.location.href=('http://localhost:4200/home');
+        console.log(profile.body);{
         }
       },
       error : (err) => console.log(err),
@@ -40,7 +39,7 @@ export class Signup {
   });
 
   onSubmit() {
-    this.httpRequestService.userCreation(
+    this.httpRequestService.createProfile(
       this.userInfo.value.firstName ?? '',
       this.userInfo.value.lastName ?? '').subscribe();
   }
