@@ -2,9 +2,7 @@ package com.example.demo.controller;
 
 
 import com.example.demo.configuration.ResourceOwnerConfiguration;
-import com.example.demo.table.Profile;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.table.User;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,14 +32,14 @@ class UserController {
         /*TODO:
          *1. Find way to determine if first and last name are set. This will be forwarded to the frontend, which will handle redriection
          */
-        Optional<User> user = userRepository.findById(resourceOwnerConfiguration.getOpaqueToken());
+        Optional<Profile> user = userRepository.findById(resourceOwnerConfiguration.getOpaqueToken());
         if (user.isPresent()) {
             return new ResponseEntity<>(resourceOwnerConfiguration.getOpaqueToken(), HttpStatusCode.valueOf(200));
         }
         return new ResponseEntity<>(HttpStatusCode.valueOf(404));
     }
 
-
+    /*
     @PutMapping("/profile")
     public void createProfile(@RequestBody SignUpForm signUpForm) {
         System.out.println(resourceOwnerConfiguration.getOpaqueToken());
@@ -52,4 +50,5 @@ class UserController {
             userRepository.save(profile.get());
         }
     }
+    */
 }

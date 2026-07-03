@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.table.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +12,7 @@ import java.net.URISyntaxException;
 class AdminController {
 
     @GetMapping("/default")
-    public ResponseEntity<User> admin() throws URISyntaxException {
+    public ResponseEntity<Profile> admin() throws URISyntaxException {
         return null;
     }
 }

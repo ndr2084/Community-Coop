@@ -1,5 +1,4 @@
 package com.example.demo.configuration;
-import com.example.demo.table.User;
 import com.example.demo.repository.UserRepository;
 import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Bean;
@@ -78,7 +77,7 @@ class SecurityConfiguration {
                     authority = "ADMIN";
                 }
                 resourceOwnerConfiguration.setResourceOwner(email, authority, subject);
-                User userinfo = new User(subject);
+                Profile userinfo = new Profile(subject);
                 userinfo.setUser(email, authority);
                 userRepository.save(userinfo);
 
