@@ -34,5 +34,16 @@ public class Profile {
     @JoinColumn(name = "profile_id")
     private Set<ProfileHasShop> profileHasShops = new LinkedHashSet<>();
 
+    public Profile(String subject) {
+    }
 
+    public Profile() {
+
+    }
+
+
+    public void setUser(String email, String authority) {
+        this.gmail = email;
+        this.authority = authority;
+    }
 }

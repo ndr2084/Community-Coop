@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import com.example.demo.configuration.ResourceOwnerConfiguration;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.table.Profile;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
