@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: 2467
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,6 +14,7 @@ spring:
       client:
         registration:
           google:
-            client-id: 438059515778-cpsvm35adfscaru0g90gvp55fst7rbm4.apps.googleusercontent.com
-            client-secret: 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
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+
 

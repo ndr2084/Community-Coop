@@ -35,12 +35,12 @@ public class Profile {
     private Set<ProfileHasShop> profileHasShops = new LinkedHashSet<>();
 
     public Profile(String subject) {
+        this.subject = subject;
     }
 
     public Profile() {
 
     }
-
 
     public void setUser(String email, String authority) {
         this.gmail = email;
