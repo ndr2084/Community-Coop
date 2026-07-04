@@ -1,0 +1,79 @@
+CREATE TABLE Profile
+(
+    subject   TEXT PRIMARY KEY NOT NULL,
+    authority TEXT             NOT NULL,
+    gmail     TEXT             NOT NULL
+);
+
+CREATE TABLE Cart(
+    total_price INTEGER NOT NULL,
+    cart_name TEXT NOT NULL,
+    cart_id TEXT PRIMARY KEY NOT NULL REFERENCES Profile(subject)
+
+);
+
+
+CREATE TABLE Item(
+                     item_id TEXT PRIMARY KEY NOT NULL,
+                     stock INTEGER NOT NULL,
+                     price INTEGER NOT NULL,
+                     description TEXT NOT NULL
+);
+
+CREATE TABLE Photo
+(
+    photo_id TEXT PRIMARY KEY NOT NULL,
+    item_id TEXT, FOREIGN KEY(item_id) REFERENCES Item(item_id),
+    photo_url TEXT NOT NULL
+);
+
+CREATE TABLE Shop
+(
+    shop_id TEXT NOT NULL,
+    PRIMARY KEY (shop_id)
+);
+
+CREATE TABLE Cart_Item
+(
+    item_id TEXT NOT NULL,
+    cart_id TEXT NOT NULL,
+
+    FOREIGN KEY(cart_id) REFERENCES Cart(cart_id),
+    FOREIGN KEY(item_id) REFERENCES item(item_id),
+
+    PRIMARY KEY(item_id, cart_id)
+
+);
+
+CREATE TABLE profile_profile
+(
+    subject1 TEXT NOT NULL,
+    subject2 TEXT NOT NULL,
+
+    FOREIGN KEY(subject1) REFERENCES Profile(subject),
+    FOREIGN KEY(subject2) REFERENCES Profile(subject),
+    PRIMARY KEY(subject1, subject2),
+    CHECK (subject1 < subject2)
+);
+
+CREATE TABLE shop_item
+(
+    item_id TEXT NOT NULL,
+    shop_id TEXT NOT NULL,
+
+    FOREIGN KEY(item_id) REFERENCES Item(item_id),
+    FOREIGN KEY(shop_id) REFERENCES Shop(shop_id),
+    PRIMARY KEY(item_id, shop_id)
+);
+
+CREATE TABLE profile_shop
+(
+    subject TEXT NOT NULL,
+    shop_id TEXT NOT NULL,
+    owner_since TIMESTAMP NOT NULL,
+
+    FOREIGN KEY(subject) REFERENCES Profile(subject),
+    FOREIGN KEY(shop_id) REFERENCES Shop(shop_id),
+    PRIMARY KEY(subject, shop_id)
+)
+

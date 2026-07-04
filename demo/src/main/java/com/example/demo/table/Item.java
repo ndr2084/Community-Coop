@@ -1,11 +1,11 @@
 package com.example.demo.table;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -16,23 +16,14 @@ public class Item {
     @Column(name = "item_id", nullable = false, length = Integer.MAX_VALUE)
     private String itemId;
 
-    @Column(name = "item_price", nullable = false)
-    private Integer itemPrice;
+    @Column(name = "stock", nullable = false)
+    private Integer stock;
 
-    @Column(name = "item_name", nullable = false, length = Integer.MAX_VALUE)
-    private String itemName;
+    @Column(name = "price", nullable = false)
+    private Integer price;
 
-    @Column(name = "item_description", length = Integer.MAX_VALUE)
-    private String itemDescription;
-
-    @ManyToMany
-    private Set<Profile> profiles = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "item")
-    private Set<Photo> photos = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "item")
-    private Set<ShopSellsItem> shopSellsItems = new LinkedHashSet<>();
+    @Column(name = "description", nullable = false, length = Integer.MAX_VALUE)
+    private String description;
 
 
 }

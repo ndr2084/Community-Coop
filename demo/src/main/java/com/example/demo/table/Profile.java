@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @Entity
@@ -21,18 +18,8 @@ public class Profile {
 
     @Column(name = "gmail", nullable = false, length = Integer.MAX_VALUE)
     private String gmail;
-
-    @OneToMany
-    @JoinColumn(name = "profile_id")
-    private Set<Cart> carts = new LinkedHashSet<>();
-
-    @ManyToMany
-    @JoinTable(name = "cart_has_item", joinColumns = {@JoinColumn(name = "profile_id")}, inverseJoinColumns = {@JoinColumn(name = "item_id")})
-    private Set<Item> items = new LinkedHashSet<>();
-
-    @OneToMany
-    @JoinColumn(name = "profile_id")
-    private Set<ProfileHasShop> profileHasShops = new LinkedHashSet<>();
+    @OneToOne(mappedBy = "profile")
+    private Cart cart;
 
     public Profile(String subject) {
         this.subject = subject;
@@ -46,4 +33,5 @@ public class Profile {
         this.gmail = email;
         this.authority = authority;
     }
+
 }
