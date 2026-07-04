@@ -77,7 +77,7 @@ class SecurityConfiguration {
                     authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
                     authority = "ADMIN";
                 }
-                resourceOwnerConfiguration.setResourceOwner(email, authority, subject);
+                resourceOwnerConfiguration.setUniqueIdentifier(subject);
                 Profile userinfo = new Profile(subject);
                 userinfo.setUser(email, authority);
                 userRepository.save(userinfo);

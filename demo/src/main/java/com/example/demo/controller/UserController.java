@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import com.example.demo.configuration.ResourceOwnerConfiguration;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.UserService;
 import com.example.demo.table.Profile;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -16,15 +17,18 @@ class UserController {
 
     public UserRepository userRepository;
     public ResourceOwnerConfiguration resourceOwnerConfiguration;
+    public UserService userService;
 
-    UserController(UserRepository userRepository, ResourceOwnerConfiguration resourceOwnerConfiguration) {
+    UserController(UserRepository userRepository, ResourceOwnerConfiguration resourceOwnerConfiguration, UserService userService) {
         this.userRepository = userRepository;
         this.resourceOwnerConfiguration = resourceOwnerConfiguration;
+        this.userService = userService;
     }
 
     @PutMapping("/create")
     public ResponseEntity<String> createUser(@RequestBody Profile profile) {
-        System.out.println(profile);
+        userService.setFirstAndLastName(profile.getFirstName(), profile.getLastName());
+
         return new ResponseEntity<>(HttpStatusCode.valueOf(201));
     }
 
