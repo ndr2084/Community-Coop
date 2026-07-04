@@ -26,12 +26,9 @@ import java.util.Set;
 @EnableWebSecurity
 class SecurityConfiguration {
 
-    private final ResourceOwnerConfiguration resourceOwnerConfiguration;
     private final UserRepository userRepository;
 
-    public SecurityConfiguration(ResourceOwnerConfiguration resourceOwnerConfiguration,
-                                 UserRepository userRepository) {
-        this.resourceOwnerConfiguration = resourceOwnerConfiguration;
+    public SecurityConfiguration(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -68,20 +65,12 @@ class SecurityConfiguration {
             public OidcUser loadUser(@NonNull OidcUserRequest request) {
                 OidcUser user = delegate.loadUser(request);
                 String email = user.getAttribute("email");
-                String subject = user.getAttribute("sub");
-                String authority = "USER";
                 Set<GrantedAuthority> authorities = new HashSet<>(user.getAuthorities());
                 authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 
                 if (admins.contains(email)) {
                     authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-                    authority = "ADMIN";
                 }
-                resourceOwnerConfiguration.setUniqueIdentifier(subject);
-                Profile userinfo = new Profile(subject);
-                userinfo.setUser(email, authority);
-                userRepository.save(userinfo);
-
 
                 return new DefaultOidcUser(authorities, user.getIdToken(), user.getUserInfo());
             }

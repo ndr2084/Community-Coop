@@ -26,7 +26,6 @@ public class Profile {
     @Column(name = "first_name", nullable = false, length = Integer.MAX_VALUE)
     private String firstName;
 
-    @NotBlank
     @Size(min=1, max=50)
     @Column(name = "last_name", nullable = false, length = Integer.MAX_VALUE)
     private String lastName;
@@ -41,18 +40,7 @@ public class Profile {
     @OneToOne(mappedBy = "profile")
     private Cart cart;
 
-    public Profile(String subject) {
-        this.subject = subject;
-    }
-
-    public Profile() {
-
-    }
-
-    public void setUser(String email, String authority) {
-        this.gmail = email;
-        this.authority = authority;
-    }
+    public Profile() {}
 
     @Override
     public final boolean equals(Object o) {
