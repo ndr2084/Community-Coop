@@ -32,13 +32,15 @@ export class Signup {
 
   ngOnInit() {
     this.httpRequestService.getProfile().subscribe(user => {
-      this.signUpFormAutoFill = user;
+      if(user.status === 200){
+      this.signUpFormAutoFill = user.body;
       this.userInfo.patchValue({
         firstName: this.signUpFormAutoFill.name,
         lastName: this.signUpFormAutoFill.familyName,
         email: this.signUpFormAutoFill.email,
         picture: this.signUpFormAutoFill.picture
       });
+    }
     });
   }
 

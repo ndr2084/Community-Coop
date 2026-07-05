@@ -1,4 +1,4 @@
-import { HttpClient, HttpEvent } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Profile } from '../entity/profile';
@@ -11,11 +11,12 @@ export class HttpRequestService {
 
   httpClient = inject(HttpClient);
 
-  getProfile() : Observable<SignUpFormAutoFill>{
-    return this.httpClient.get<SignUpFormAutoFill>('http://localhost:8080/users/profile');
+  getProfile() : Observable<HttpResponse<SignUpFormAutoFill>>{
+    return this.httpClient.get<SignUpFormAutoFill>('http://localhost:8080/users/profile', {observe: 'response'});
   }
 
 
 
   }
+
 

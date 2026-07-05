@@ -38,6 +38,7 @@ class UserController {
 
         if (
                 !userService.createUser(email, name, familyName, authority, sub, picture)) {
+            System.out.println("User doesn't exist 1");
 
 
             /*THESE FIELD NAMES MUST MATCH THE FIELD NAMES DEFINED IN ANGULAR SIGNUPFORMAUTOFILL INTERFACE*/
@@ -45,7 +46,9 @@ class UserController {
             }
 
 
-            return ResponseEntity.ok(new SignUpFormAutoFill(name, familyName, email, picture));
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(new SignUpFormAutoFill(name, familyName, email, picture));
         }
         System.out.println("User already exists 2");
 
