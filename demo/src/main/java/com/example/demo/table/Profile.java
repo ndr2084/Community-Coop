@@ -30,6 +30,9 @@ public class Profile {
     @Column(name = "last_name", nullable = false, length = Integer.MAX_VALUE)
     private String lastName;
 
+    @Column(name = "picture", nullable = false, length = Integer.MAX_VALUE)
+    private String picture;
+
     @NotBlank
     @Column(name = "authority", nullable = false, length = Integer.MAX_VALUE)
     private String authority;
@@ -57,4 +60,5 @@ public class Profile {
     public final int hashCode() {
         return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
     }
+
 }

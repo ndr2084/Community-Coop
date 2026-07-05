@@ -4,6 +4,7 @@ package com.example.demo.controller;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import com.example.demo.table.Profile;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -24,37 +25,27 @@ class UserController {
         this.userService = userService;
     }
 
-    @PutMapping("/create")
-    public ResponseEntity<String> createUser(@AuthenticationPrincipal OidcUser oidcUser) {
+    @GetMapping("/profile")
+    public ResponseEntity<?> createUser(@AuthenticationPrincipal OidcUser oidcUser) {
 
         String email = oidcUser.getAttribute("email");
-        String name = oidcUser.getAttribute("name");
+        String name = oidcUser.getGivenName();
         String familyName = oidcUser.getAttribute("family_name");
-        String authority = oidcUser.getAttribute("authority");
         String sub = oidcUser.getAttribute("sub");
-        String picture = oidcUser.getAttribute("picture");
+        String authority = oidcUser.getAuthorities().toString();
+        String picture = oidcUser.getPicture();
 
-        userService.createUser(email, name, authority, sub, picture);
+
+        userService.createUser(email, name, familyName, authority, sub, picture);
 
 
-        return new ResponseEntity<>(HttpStatusCode.valueOf(201));
+        /*THESE FIELD NAMES MUST MATCH THE FIELD NAMES DEFINED IN ANGULAR SIGNUPFORMAUTOFILL INTERFACE*/
+        record SignUpFormAutoFill(String name, String familyName, String email, String picture) {}
+
+        System.out.println(picture);
+
+
+        return ResponseEntity.ok(new SignUpFormAutoFill(name, familyName, email, picture));
+
     }
-
-    @GetMapping("/profile")
-    public ResponseEntity<String> defaultUser() {
-        return null;
-    }
-
-    /*
-    @PutMapping("/profile")
-    public void createProfile(@RequestBody SignUpForm signUpForm) {
-        System.out.println(resourceOwnerConfiguration.getOpaqueToken());
-        Optional<User> profile = userRepository.findById(resourceOwnerConfiguration.getOpaqueToken());
-        if (profile.isPresent()) {
-            profile.get().setFirstName(signUpForm.firstName());
-            profile.get().setLastName(signUpForm.lastName());
-            userRepository.save(profile.get());
-        }
-    }
-    */
 }
