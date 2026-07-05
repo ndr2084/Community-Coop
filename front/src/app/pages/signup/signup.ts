@@ -13,8 +13,8 @@ import { SignUpFormAutoFill } from '../../entity/SignUpFormAutoFill';
 })
 export class Signup {
 
-  imageUrl !: string;
   signUpFormAutoFill!: SignUpFormAutoFill;
+  imagePreview!: string;
 
 
   toggleSignal(signalArgument: WritableSignal<boolean>): void {
@@ -23,22 +23,37 @@ export class Signup {
   }
   httpRequestService = inject(HttpRequestService);
 
+  userInfo = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    picture: new FormControl('')
+  });
 
-  ngOnInit(){
+  ngOnInit() {
     this.httpRequestService.getProfile().subscribe(user => {
       this.signUpFormAutoFill = user;
       this.userInfo.patchValue({
         firstName: this.signUpFormAutoFill.name,
         lastName: this.signUpFormAutoFill.familyName,
         email: this.signUpFormAutoFill.email,
+        picture: this.signUpFormAutoFill.picture
       });
     });
   }
 
-  userInfo = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-  });
+  onFileSelected(event: Event): void {
+    const file = (event.target as HTMLInputElement).files?.[0]
+
+    if (!file) {
+      return;
+    }
+    console.log(file);
+    this.signUpFormAutoFill.picture = URL.createObjectURL(file);
+  }
+
+
+
+
 }
 

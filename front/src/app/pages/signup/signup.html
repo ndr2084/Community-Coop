@@ -10,6 +10,9 @@
   <label for="email" id="email">Email</label>
   <input type="email" formControlName="email" placeholder="{{signUpFormAutoFill.email}}">
 
+  <label for="picture" id="picture">Photo</label>
+  <input type="file" formControlName="photo" accept="image/*" (change)="onFileSelected($event)">
+
   <button type="submit">Submit</button>
 </form>
 
