@@ -11,6 +11,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.Optional;
 
 @RestController
@@ -35,17 +36,25 @@ class UserController {
         String authority = oidcUser.getAuthorities().toString();
         String picture = oidcUser.getPicture();
 
-
-        userService.createUser(email, name, familyName, authority, sub, picture);
-
-
-        /*THESE FIELD NAMES MUST MATCH THE FIELD NAMES DEFINED IN ANGULAR SIGNUPFORMAUTOFILL INTERFACE*/
-        record SignUpFormAutoFill(String name, String familyName, String email, String picture) {}
-
-        System.out.println(picture);
+        if (
+                !userService.createUser(email, name, familyName, authority, sub, picture)) {
 
 
-        return ResponseEntity.ok(new SignUpFormAutoFill(name, familyName, email, picture));
+            /*THESE FIELD NAMES MUST MATCH THE FIELD NAMES DEFINED IN ANGULAR SIGNUPFORMAUTOFILL INTERFACE*/
+            record SignUpFormAutoFill(String name, String familyName, String email, String picture) {
+            }
 
+
+            return ResponseEntity.ok(new SignUpFormAutoFill(name, familyName, email, picture));
+        }
+        System.out.println("User already exists 2");
+
+        //TODO: 1.0 - REDIRECT TO DIFFERENT PAGE IF USER ALREADY EXISTS
+        //TODO: 1.1 - FIGURE OUT WHY MECHANISM IS NOT WORKING BELOW
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .location(URI.create("https://www.google.com"))
+                .build();
     }
+
 }

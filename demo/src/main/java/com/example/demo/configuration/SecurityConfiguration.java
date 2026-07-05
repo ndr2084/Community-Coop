@@ -44,7 +44,7 @@ class SecurityConfiguration {
                 )
 
                 .oauth2Login(oauth2 -> oauth2
-                        .defaultSuccessUrl("http://localhost:4200/signup", true)
+                        .defaultSuccessUrl("http://localhost:4200/signup", false)
                         .userInfoEndpoint(userInfo -> userInfo
                                 .oidcUserService(oidcUserService()))
                 )
