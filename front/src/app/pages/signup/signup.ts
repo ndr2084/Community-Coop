@@ -23,17 +23,17 @@ export class Signup {
   }
   httpRequestService = inject(HttpRequestService);
 
-  ngOnInit(){
-    this.httpRequestService.getProfile().subscribe({
-      next : (response) =>{
-        this.signUpFormAutoFill = response;
-        this.imageUrl = response.picture;
-      },
-      error : (err) => console.log(err),
-      complete: () => console.log('done'),
-    })
-  }
 
+  ngOnInit(){
+    this.httpRequestService.getProfile().subscribe(user => {
+      this.signUpFormAutoFill = user;
+      this.userInfo.patchValue({
+        firstName: this.signUpFormAutoFill.name,
+        lastName: this.signUpFormAutoFill.familyName,
+        email: this.signUpFormAutoFill.email,
+      });
+    });
+  }
 
   userInfo = new FormGroup({
     firstName: new FormControl(''),
@@ -41,3 +41,4 @@ export class Signup {
     email: new FormControl(''),
   });
 }
+
