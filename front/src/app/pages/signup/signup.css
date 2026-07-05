@@ -1,0 +1,19 @@
+:host{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: fit-content;
+}
+img{
+  border: 1px solid green;
+  width: fit-content;
+}

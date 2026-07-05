@@ -1,12 +1,16 @@
-<form (submit)="onSubmit()" [formGroup]="userInfo">
-  <label for="first-name" id="first-name">First Name:</label>
-  <input type="text" formControlName="firstName">
+<img [src]="signUpFormAutoFill.picture" alt="Profile picture" referrerpolicy="no-referrer">
 
-  <label for="last-name" id="last-name">Last Name:</label>
-  <input type="text" formControlName="lastName">
+<form  [formGroup]="userInfo">
+  <label for="first-name" id="first-name">First Name</label>
+  <input type="text" formControlName="firstName" placeholder="{{signUpFormAutoFill.name}}">
+
+  <label for="last-name" id="last-name">Last Name</label>
+  <input type="text" formControlName="lastName" placeholder="{{signUpFormAutoFill.familyName}}">
+
+  <label for="email" id="email">Email</label>
+  <input type="email" formControlName="email" placeholder="{{signUpFormAutoFill.email}}">
 
   <button type="submit">Submit</button>
 </form>
-
 
 

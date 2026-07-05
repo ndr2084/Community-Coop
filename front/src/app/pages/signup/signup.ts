@@ -3,6 +3,7 @@ import { Component, inject, Signal, signal, WritableSignal } from '@angular/core
 import { HttpRequestService } from '../../services/http-request-service';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms'
 import { Profile } from '../../entity/profile';
+import { SignUpFormAutoFill } from '../../entity/SignUpFormAutoFill';
 
 @Component({
   selector: 'app-signup',
@@ -12,8 +13,9 @@ import { Profile } from '../../entity/profile';
 })
 export class Signup {
 
-  myUser: User = { email: "" };
-  myProfile: Profile = {firstName: "", lastName: ""};
+  imageUrl !: string;
+  signUpFormAutoFill!: SignUpFormAutoFill;
+
 
   toggleSignal(signalArgument: WritableSignal<boolean>): void {
     var arg: boolean = false;
@@ -23,9 +25,9 @@ export class Signup {
 
   ngOnInit(){
     this.httpRequestService.getProfile().subscribe({
-      next : (profile) =>{
-        console.log(profile.body);{
-        }
+      next : (response) =>{
+        this.signUpFormAutoFill = response;
+        this.imageUrl = response.picture;
       },
       error : (err) => console.log(err),
       complete: () => console.log('done'),
@@ -36,15 +38,6 @@ export class Signup {
   userInfo = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
+    email: new FormControl(''),
   });
-
-  onSubmit() {
-    this.httpRequestService.createProfile(
-      this.userInfo.value.firstName ?? '',
-      this.userInfo.value.lastName ?? '').subscribe();
-  }
-}
-
-interface User {
-  email: string;
 }
