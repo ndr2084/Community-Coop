@@ -47,17 +47,17 @@ class UserController {
 
 
             return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
+                    .status(HttpStatus.OK)
                     .body(new SignUpFormAutoFill(name, familyName, email, picture));
         }
-        System.out.println("User already exists 2");
 
         //TODO: 1.0 - REDIRECT TO DIFFERENT PAGE IF USER ALREADY EXISTS
         //TODO: 1.1 - FIGURE OUT WHY MECHANISM IS NOT WORKING BELOW
+        System.out.println("User already exists 2");
+        assert sub != null;
         return ResponseEntity
-                .status(HttpStatus.OK)
-                .location(URI.create("https://www.google.com"))
-                .build();
+                .status(HttpStatus.ACCEPTED)
+                .body(userRepository.findById(sub));
     }
 
 }
