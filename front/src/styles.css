@@ -9,6 +9,12 @@ html, body{
   font-family: "Geist Pixel", sans-serif;
 }
 
-ul, li{
+ul, li, button, input{
   all: unset;
+}
+
+input{
+  background: grey;
+  border: 1px solid white;
+  border-radius: 8px;
 }

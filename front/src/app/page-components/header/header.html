@@ -1,11 +1,15 @@
 <nav id="default-header">
-  <ul class="logo">
-    <h2>E—COOP</h2>
-  </ul>
+  <div class="logo" (click)="returnToHome()">
+    <h2 class="home-button">E—</h2>
+    <h2 class="home-button">COOP</h2>
+  </div>
   <ul class="shopping-utilities">
-    <input type="text" class="shopping-search-bar">
-    <li>Shopping Location</li>
-    <li>Order History</li>
-    <li>Cart</li>
+    <div class="search-container">
+      <input type="text" class="shopping-search-bar">
+      <button class="submit-button" type="submit">Submit </button>
+    </div>
+    <button class="header-button">Shopping Location</button>
+    <button class="header-button">Order History</button>
+    <button class="header-button">Cart</button>
   </ul>
 </nav>
