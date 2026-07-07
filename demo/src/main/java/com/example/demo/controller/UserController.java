@@ -38,7 +38,7 @@ class UserController {
 
         if (
                 !userService.createUser(email, name, familyName, authority, sub, picture)) {
-            System.out.println("User doesn't exist 1");
+            System.out.println("User doesn't; creating user");
 
 
             /*THESE FIELD NAMES MUST MATCH THE FIELD NAMES DEFINED IN ANGULAR SIGNUPFORMAUTOFILL INTERFACE*/
@@ -53,11 +53,10 @@ class UserController {
 
         //TODO: 1.0 - REDIRECT TO DIFFERENT PAGE IF USER ALREADY EXISTS
         //TODO: 1.1 - FIGURE OUT WHY MECHANISM IS NOT WORKING BELOW
-        System.out.println("User already exists 2");
+        System.out.println("User already exists; redirecting to dashboard");
         assert sub != null;
         return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
-                .body(userRepository.findById(sub));
+                .status(HttpStatus.ACCEPTED);
     }
 
 }

@@ -11,12 +11,10 @@ export class HttpRequestService {
 
   httpClient = inject(HttpClient);
 
-  getProfile() : Observable<HttpResponse<SignUpFormAutoFill>>{
-    return this.httpClient.get<SignUpFormAutoFill>('http://localhost:8080/users/profile', {observe: 'response'});
+  getProfile(): Observable<HttpResponse<SignUpFormAutoFill>> {
+    return this.httpClient.get<SignUpFormAutoFill>('http://localhost:8080/users/profile', { observe: 'response' });
   }
 
-
-
-  }
+}
 
 

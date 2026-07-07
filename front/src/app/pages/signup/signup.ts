@@ -32,6 +32,7 @@ export class Signup {
     picture: new FormControl('')
   });
 
+  /*upon successful login, present user to sign up page, or usher user to dashboard if user has signed up before*/
   ngOnInit() {
     this.httpRequestService.getProfile().subscribe(user => {
       if (user.status === 200) {
