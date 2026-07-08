@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Profile } from '../entity/profile';
 import { SignUpFormAutoFill } from '../entity/SignUpFormAutoFill';
+import { UserIndex } from '../entity/user-index';
 
 @Injectable({
   providedIn: 'root',

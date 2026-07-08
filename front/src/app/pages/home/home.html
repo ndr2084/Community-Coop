@@ -3,13 +3,15 @@
 <div class="hero-section">
   <div class="hero-components">
 
-    <h1>Welcome, user</h1>
+    <h1>Welcome {{index.userIndex.name}}</h1>
+
+
     <div class="user-action-filter">
 
       <div class="buy card">
         <img src="cart-20.svg" alt="">
         <p class="card-description">Shop local and find sweet deals</p>
-        <h1 class="button-text">Shop</h1>
+        <h1 (click)="viewShop()"class="button-text">Shop</h1>
 
       </div>
 
@@ -17,13 +19,13 @@
         <img src="tent-20.svg" alt="">
 
         <p class="card-description">Your outdoor adventure on a budget</p>
-        <h1 class="button-text">Rent</h1>
+        <h1 (click)="viewRentals()" class="button-text">Rent</h1>
       </div>
 
       <div class="sell card">
         <img src="money-exchange-20.svg" alt="">
         <p class="card-description">Sell your items on the market</p>
-        <h1 class="button-text">Sell</h1>
+        <h1 (click)="viewSelling()"class="button-text">Sell</h1>
       </div>
     </div>
   </div>

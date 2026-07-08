@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Header } from "../../page-components/header/header";
 
 @Component({
-  selector: 'app-rent',
+  selector: 'app-order-history',
   imports: [Header],
-  templateUrl: './rent.html',
-  styleUrl: './rent.css',
+  templateUrl: './order-history.html',
+  styleUrl: './order-history.css',
 })
-export class Rent {
+export class OrderHistory {
 
 }

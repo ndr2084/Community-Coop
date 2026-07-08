@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserIndexService } from '../../services/user-index-service';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +11,21 @@ import { Router } from '@angular/router';
 export class Header {
 
   router = inject(Router);
+  index = inject(UserIndexService)
 
   returnToHome(){
     this.router.navigateByUrl("home");
   }
 
-  chooseShoppingLocation(){}
+  chooseShoppingLocation(){
+    this.router.navigateByUrl("user-shop")
+  }
 
-  viewOrderHistory(){}
+  viewOrderHistory(){
+    this.router.navigateByUrl("order-history")
+  }
 
-  viewCart(){}
+  viewCart(){
+    this.router.navigateByUrl("cart")
+  }
 }

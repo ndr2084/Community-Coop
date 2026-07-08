@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Header } from "../../page-components/header/header";
 
 @Component({
-  selector: 'app-rent',
+  selector: 'app-cart',
   imports: [Header],
-  templateUrl: './rent.html',
-  styleUrl: './rent.css',
+  templateUrl: './cart.html',
+  styleUrl: './cart.css',
 })
-export class Rent {
+export class Cart {
 
 }

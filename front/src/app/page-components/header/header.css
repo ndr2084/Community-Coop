@@ -35,6 +35,7 @@ h2{
   width: 100%;
   border: 1px solid white;
   outline: none;
+  padding: 2px 4px;
 }
 
 .submit-button{
@@ -42,7 +43,7 @@ h2{
   color: white;
   position: absolute;
   top: 50%;
-  right: 1px;
+  right: -5px;
   transform: translateY(-50%);
   border: none;
   background: transparent;

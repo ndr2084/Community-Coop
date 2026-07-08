@@ -5,6 +5,9 @@ import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms'
 import { Profile } from '../../entity/profile';
 import { SignUpFormAutoFill } from '../../entity/SignUpFormAutoFill';
 import { Router } from '@angular/router'
+import { UserIndex } from '../../entity/user-index';
+import { UserIndexService } from '../../services/user-index-service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -15,6 +18,7 @@ import { Router } from '@angular/router'
 export class Signup {
 
   signUpFormAutoFill!: SignUpFormAutoFill;
+  userIndex!: UserIndex;
   imagePreview!: string;
 
 
@@ -24,6 +28,7 @@ export class Signup {
   }
   httpRequestService = inject(HttpRequestService);
   routerInline = inject(Router);
+  userIndexService = inject(UserIndexService);
 
   userInfo = new FormGroup({
     firstName: new FormControl(''),
@@ -45,8 +50,15 @@ export class Signup {
         });
       }
       if (user.status === 202) {
+        this.userIndex = user.body!;
+        var firstName = this.userIndex.name;
+        var lastName = this.userIndex.familyName;
+        var picture = this.userIndex.picture;
+        this.userIndexService.setUserIndex(firstName, lastName, picture);
         this.routerInline.navigateByUrl("/home");
-      }
+
+
+      };
     });
   }
 

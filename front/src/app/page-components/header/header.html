@@ -8,8 +8,8 @@
       <input type="text" class="shopping-search-bar">
       <button class="submit-button" type="submit">Submit </button>
     </div>
-    <button class="header-button">Shopping Location</button>
-    <button class="header-button">Order History</button>
-    <button class="header-button">Cart</button>
+    <button (click)="chooseShoppingLocation()"class="header-button">{{index.userIndex.name}}'s Shop</button>
+    <button (click)="viewOrderHistory()"class="header-button">Order History</button>
+    <button (click)="viewCart()" class="header-button">Cart</button>
   </ul>
 </nav>

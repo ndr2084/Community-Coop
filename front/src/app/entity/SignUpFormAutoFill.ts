@@ -4,6 +4,6 @@
 export interface SignUpFormAutoFill{
   name: string,
   familyName: string,
-  email: string,
   picture: string
+  email: string,
 }
