@@ -25,4 +25,8 @@ export class Home {
   viewSelling(){
     this.router.navigateByUrl("sell");
   }
+
+  missionStatement(){
+    this.router.navigateByUrl("our-mission");
+  }
 }

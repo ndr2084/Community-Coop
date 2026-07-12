@@ -1,12 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 html, body{
+  overflow: hidden;
   box-sizing: border-box;
   height: 100%;
   width :100%;
-  margin: 0; padding: 0;
-  background: black;
+  margin: 0;
+  padding: 0;
+  background: rgb(241, 196, 15);
   color: white;
   font-family: "Geist Pixel", sans-serif;
+
 }
 
 ul, li, button, input{
@@ -18,3 +21,23 @@ input{
   border: 1px solid white;
   border-radius: 8px;
 }
+
+*{
+  margin: 0 ;
+  padding: 0 ;
+}
+
+.button-text{
+  color: white;
+  margin: 10px;
+  border: 1px solid rgb(255, 255, 255);
+  text-align: center;
+  background: rgb(34, 116, 165);
+}
+
+.button-text:hover{
+  background: rgb(60, 60, 60);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
