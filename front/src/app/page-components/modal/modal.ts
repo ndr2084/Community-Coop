@@ -19,13 +19,14 @@ export class Modal {
   }
 
   confirm() {
+    this.submitApplication();
     this.dialogRef.close('confirmed')
   }
 
   /*Assigns form values to variables*/
   itemForm = new FormGroup({
     name : new FormControl(''),
-    price: new FormControl(-999),
+    price: new FormControl(),
     isForRent: new FormControl(false),
     isForSale : new FormControl(false),
     condition : new FormControl(''),

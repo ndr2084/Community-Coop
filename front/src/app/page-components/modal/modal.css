@@ -1,0 +1,28 @@
+.item-form{
+  display: flex;
+  flex-direction: column;
+  gap: calc(16px + 4px);
+}
+
+.close{
+  cursor: pointer;
+}
+
+.modal-footer{
+  display: flex;
+  gap: 20px;
+}
+
+.modal-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.check-box{
+  width: 10px;
+  height: 10px;
+}
+
+.check-box:checked{
+  background: rgb(34, 116, 165);
+}

@@ -20,13 +20,13 @@ export class UserShopService {
           ...list,
           {
             id: Date.now(),
-            name: '',
-            price: -999,
-            isForRent: false,
-            isForSale: false,
-            condition: '',
+            name: name,
+            price: price,
+            isForRent: isForRent,
+            isForSale: isForSale,
+            condition: condition,
             picture: '',
-            description: 'no description provided'
+            description: description
           }
         ]
     )

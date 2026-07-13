@@ -1,0 +1,9 @@
+.shop-gallery{
+  display: flex;
+  width: 100%;
+  border: 1px solid green;
+}
+
+.shop-item{
+  border: 2px solid brown;
+}
