@@ -1,9 +1,17 @@
 .shop-gallery{
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   border: 1px solid green;
+  overflow: scroll;
+  height: 100%;
 }
 
 .shop-item{
   border: 2px solid brown;
+}
+
+.image-previews{
+  width: 325px;
+  aspect-ratio: 1/1;
 }

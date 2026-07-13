@@ -13,7 +13,7 @@ export class UserShopService {
   //CRUD  OPERATIONS
   create(
     name: string, price: number, isForRent: boolean, isForSale: boolean,
-    condition: string, picture: string, description: string
+    condition: string, picture: string[], description: string
    ){
     this.__items.update( (list) =>
         [
@@ -25,7 +25,7 @@ export class UserShopService {
             isForRent: isForRent,
             isForSale: isForSale,
             condition: condition,
-            picture: '',
+            picture: picture,
             description: description
           }
         ]
@@ -54,6 +54,6 @@ export interface Item{
   isForRent: boolean;
   isForSale: boolean;
   condition: string,
-  picture: string, /*replace string type with actual type*/
+  picture: string[],
   description: string
 }

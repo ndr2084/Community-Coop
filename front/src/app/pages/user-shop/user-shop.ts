@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Header } from "../../page-components/header/header";
 import { UserIndexService } from '../../services/user-index-service';
 import { Dialog, DialogModule, DialogRef } from '@angular/cdk/dialog'
-import { Modal } from '../../page-components/modal/modal';
+import { UserShopItemCreation } from '../../page-components/forms/user-shop-item-creation/user-shop-item-creation';
 import { UserShopService } from '../../services/user-shop-service';
 
 @Component({
@@ -21,8 +21,8 @@ export class UserShop {
 
   addItem(){
     const dialogRef =
-    this.dialog.open(Modal, {
-      width: '500px',
+    this.dialog.open(UserShopItemCreation, {
+      width: '350px',
       data: {
         title: 'Add Item',
         messge: 'Adding item for sale!',

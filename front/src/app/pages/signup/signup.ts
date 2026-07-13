@@ -56,8 +56,6 @@ export class Signup {
         var picture = this.userIndex.picture;
         this.userIndexService.setUserIndex(firstName, lastName, picture);
         this.routerInline.navigateByUrl("/home");
-
-
       };
     });
   }

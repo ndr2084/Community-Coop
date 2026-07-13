@@ -1,18 +1,20 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { UserShopService } from '../../services/user-shop-service';
+import { UserShopService } from '../../../services/user-shop-service';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'app-user-shop-item-creation',
   imports: [ReactiveFormsModule],
-  templateUrl: './modal.html',
-  styleUrl: './modal.css',
+  templateUrl: './user-shop-item-creation.html',
+  styleUrl: './user-shop-item-creation.css',
 })
-export class Modal {
+export class UserShopItemCreation {
 
   dialogRef = inject(DialogRef);
   userShopService = inject(UserShopService);
+  files: File[] = [];
+  imageUrls: string[] = [];
 
   close() {
     this.dialogRef.close()
@@ -20,6 +22,10 @@ export class Modal {
 
   confirm() {
     this.submitApplication();
+    for(const f of this.files){
+      console.log("photo:", f);
+    }
+
     this.dialogRef.close('confirmed')
   }
 
@@ -30,7 +36,7 @@ export class Modal {
     isForRent: new FormControl(false),
     isForSale : new FormControl(false),
     condition : new FormControl(''),
-    picture : new FormControl(''),
+    picture : new FormControl<string[]>([]),
     description : new FormControl(''),
   });
 
@@ -42,11 +48,14 @@ export class Modal {
       this.itemForm.value.isForRent ?? false,
       this.itemForm.value.isForSale ?? false,
       this.itemForm.value.condition ?? '',
-      this.itemForm.value.picture ?? '',
+      this.itemForm.value.picture ?? [],
       this.itemForm.value.description ?? '',
     )
   }
 
+  onFileSelect(e: Event){
+    this.files = Array.from((e.target as HTMLInputElement).files ?? []);
+      this.itemForm.value.picture = this.files.map(file => URL.createObjectURL(file))
 
-
+    }
 }

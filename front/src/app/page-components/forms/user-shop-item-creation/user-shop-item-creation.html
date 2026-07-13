@@ -23,7 +23,7 @@
         <input type="range" name="condition" id="condition" formControlName="condition">
 
         <label for="picture">Photo</label>
-        <input type="image" name="picture" id="picture" formControlName="picture">
+        <input type="file" name="picture" id="picture" (change)="onFileSelect($event)" multiple>
 
         <label for="description">Description: </label>
         <textarea name="description" id="description" formControlName="description"></textarea>
