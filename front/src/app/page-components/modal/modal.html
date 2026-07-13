@@ -1,0 +1,39 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2>Add an Item to your store</h2>
+      <button (click)="close()">×</button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="itemForm" (submit)="submitApplication()">
+
+        <label for="item-name">Name of task: </label>
+        <input type="text" id="item-name" formControlName="name">
+
+        <label for="item-price">Price: </label>
+        <input type="number" id="item-price" formControlName="price">
+
+        <label for="is-for-rent">This item is for rent?</label>
+        <input type="checkbox" id="is-for-rent" formControlName="isForRent">
+
+        <label for="is-for-sale">This item is for sale?</label>
+        <input type="checkbox" id="is-for-sale" formControlName="isForSale">
+
+        <label for="condition">Condition: </label>
+        <input type="range" name="condition" id="condition" formControlName="condition">
+
+        <label for="picture">Photo</label>
+        <input type="image" name="picture" id="picture" formControlName="picture">
+
+        <label for="description">Description: </label>
+        <textarea name="description" id="description" formControlName="description"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button (click)="close()">Cancel</button>
+      <button (click)="confirm()" type="submit">Confirm</button>
+    </div>
+  </div>
+</div>
