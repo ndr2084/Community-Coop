@@ -8,16 +8,13 @@
 <div class="shop-gallery">
   @for(item of itemList() ; track item.id){
   <div class="shop-item">
-    <p>Name: {{item.name}}</p>
-    <p>Description: {{item.description}}</p>
-    <p>price: {{item.price}}</p>
+    <app-user-item-carousel [photos]="item.picture"></app-user-item-carousel>
+    <p>{{item.name}}</p>
+    <p>{{item.description}}</p>
+    <p>{{item.price}}</p>
     <p>is for rent: {{item.isForRent}}</p>
     <p>is for sale: {{item.isForSale}}</p>
     <p>condition: {{item.condition}}</p>
-    @for(picture of item.picture; track picture){
-    <img [src]="picture" alt="lovely-photo" referrerpolicy="no-referrer" class="image-previews">
-    }
-    <p>ass {{item.picture}}</p>
   </div>
 
   }

@@ -4,10 +4,11 @@ import { UserIndexService } from '../../services/user-index-service';
 import { Dialog, DialogModule, DialogRef } from '@angular/cdk/dialog'
 import { UserShopItemCreation } from '../../page-components/forms/user-shop-item-creation/user-shop-item-creation';
 import { UserShopService } from '../../services/user-shop-service';
+import { UserItemCarousel } from "../../page-components/user-item-carousel/user-item-carousel";
 
 @Component({
   selector: 'app-user-shop',
-  imports: [Header, DialogModule],
+  imports: [Header, DialogModule, UserItemCarousel],
   templateUrl: './user-shop.html',
   styleUrl: './user-shop.css',
 })

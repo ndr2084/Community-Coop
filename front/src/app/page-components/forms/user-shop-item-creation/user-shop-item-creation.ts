@@ -55,7 +55,8 @@ export class UserShopItemCreation {
 
   onFileSelect(e: Event){
     this.files = Array.from((e.target as HTMLInputElement).files ?? []);
-      this.itemForm.value.picture = this.files.map(file => URL.createObjectURL(file))
-
-    }
+    this.itemForm.patchValue({
+      picture: this.files.map(file => URL.createObjectURL(file)),
+    });
+  }
 }

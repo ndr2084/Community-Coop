@@ -2,22 +2,13 @@
 
 ## The core problem
 
-`<input type="file">` is **not** a normal form control. Browsers refuse to let
-JavaScript set or read a file input's real value for security reasons. That
-means:
+`<input type="file">` is **not** a normal form control — `formControlName`
+silently binds the wrong data instead of erroring. Full explanation of why:
+[footguns.md § Angular Reactive Forms: `formControlName` on `<input type="file">`](../footguns.md#angular-reactive-forms-formcontrolname-on-input-typefile).
 
-- You cannot pre-fill a file input's value programmatically.
-- `formControlName="x"` on a file input does **not** give you the selected
-  `File` objects. Angular's default value accessor listens for `change` and
-  writes back `element.value`, which for a file input is just a fake string
-  like `"C:\fakepath\photo.jpg"` — a single string, even with `multiple` set.
-
-So any pattern like this is broken, regardless of `multiple`:
-
-```html
-<!-- BROKEN: never produces real File data -->
-<input type="file" formControlName="pictures" multiple>
-```
+Short version: browsers refuse to let JavaScript read or set a file input's
+real value, so `formControlName="pictures"` on `<input type="file" multiple>`
+never produces real `File` data, no matter what.
 
 ## The fix: bypass the value accessor, wire it manually
 
@@ -55,6 +46,17 @@ itemForm = new FormGroup({
 
 selectedFiles: File[] = [];
 ```
+
+## Footgun: mutating `itemForm.value` directly
+
+Don't write into the form via `this.itemForm.value.pictures = [...]` — it
+appears to work, then silently breaks the moment the user touches any other
+field in the form, and TypeScript won't warn you either way. Full
+explanation, why the compiler can't catch it, and the fix:
+[footguns.md § Angular Reactive Forms: mutating `.value` directly](../footguns.md#angular-reactive-forms-mutating-value-directly).
+
+Short version: always update controls via `patchValue()`/`setValue()`,
+never by assigning into `.value`.
 
 ## Displaying the uploaded images
 
@@ -115,6 +117,8 @@ oldUrls.forEach(url => URL.revokeObjectURL(url));
 - [ ] Remove `formControlName` from the file `<input>`; use `(change)` instead
 - [ ] Add `multiple` and (usually) `accept="image/*"` to the input
 - [ ] Convert `FileList` → `File[]` with `Array.from(input.files ?? [])`
+- [ ] Update the form via `patchValue()`/`setValue()` — never assign into
+      `itemForm.value` directly, it gets silently overwritten
 - [ ] Keep raw `File[]` separately if you'll actually upload them
 - [ ] Use `URL.createObjectURL(file)` only for preview strings
 - [ ] Loop over the *item's* array field when displaying, not the parent list
