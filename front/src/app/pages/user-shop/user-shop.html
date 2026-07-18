@@ -8,12 +8,22 @@
 <div class="shop-gallery">
   @for(item of itemList() ; track item.id){
   <div class="shop-item">
-    <app-user-item-carousel [photos]="item.picture"></app-user-item-carousel>
-    <p>{{item.name}}</p>
-    <p>{{item.description}}</p>
-    <p>{{item.price}}</p>
+    <ul>
+    @for(picture of item.picture ; track picture) {
+      <p>{{picture}}</p>
+    }
+    </ul>
+    <div class="name-and-price">
+      <p>{{item.name}}</p>
+      <p> ${{item.price}}</p>
+    </div>
+    <p class="description">{{item.description}}</p>
+    @if(item.isForRent){
     <p>is for rent: {{item.isForRent}}</p>
+    }
+    @if(item.isForSale){
     <p>is for sale: {{item.isForSale}}</p>
+    }
     <p>condition: {{item.condition}}</p>
   </div>
 

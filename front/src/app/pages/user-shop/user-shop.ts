@@ -2,13 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Header } from "../../page-components/header/header";
 import { UserIndexService } from '../../services/user-index-service';
 import { Dialog, DialogModule, DialogRef } from '@angular/cdk/dialog'
-import { UserShopItemCreation } from '../../page-components/forms/user-shop-item-creation/user-shop-item-creation';
+import { UserShopItemCreation } from './forms/user-shop-item-creation/user-shop-item-creation';
 import { UserShopService } from '../../services/user-shop-service';
-import { UserItemCarousel } from "../../page-components/user-item-carousel/user-item-carousel";
 
 @Component({
   selector: 'app-user-shop',
-  imports: [Header, DialogModule, UserItemCarousel],
+  imports: [Header, DialogModule],
   templateUrl: './user-shop.html',
   styleUrl: './user-shop.css',
 })
@@ -37,6 +36,7 @@ export class UserShop {
       }
   })
   };
+
   removeItem(){};
   editItem(){};
   viewShop(){};

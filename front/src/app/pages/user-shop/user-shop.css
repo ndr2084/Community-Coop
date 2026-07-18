@@ -1,18 +1,29 @@
 .shop-gallery{
   display: flex;
+  gap: 16px;
   flex-wrap: wrap;
-  width: 100%;
-  border: 1px solid green;
+  width: fit-content;
   overflow: scroll;
   height: 100%;
 }
 
 .shop-item{
-  border: 2px solid brown;
+  border: 1px solid rgba(128, 128, 128, 0.256);
   height: fit-content;
 }
 
-.image-previews{
+.picture{
   width: 325px;
-  aspect-ratio: 1/1;
+
 }
+
+.name-and-price{
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description{
+  color: grey;
+}
+

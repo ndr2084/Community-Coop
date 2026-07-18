@@ -1,7 +1,7 @@
 import { DialogRef } from '@angular/cdk/dialog';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { UserShopService } from '../../../services/user-shop-service';
+import { UserShopService } from '../../../../services/user-shop-service';
 
 @Component({
   selector: 'app-user-shop-item-creation',
