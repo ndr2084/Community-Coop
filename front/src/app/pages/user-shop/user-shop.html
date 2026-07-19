@@ -8,11 +8,19 @@
 <div class="shop-gallery">
   @for(item of itemList() ; track item.id){
   <div class="shop-item">
-    <ul>
-    @for(picture of item.picture ; track picture) {
-      <p>{{picture}}</p>
-    }
-    </ul>
+
+
+    <div class="carousel" aria-label="image carousel">
+      @for(picture of item.picture ; track picture)
+      {
+      <div class="slide">
+        <img class="picture" src="{{picture}}" alt="{{item.name}}">
+      </div>
+      }
+    </div>
+
+
+
     <div class="name-and-price">
       <p>{{item.name}}</p>
       <p> ${{item.price}}</p>

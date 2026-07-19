@@ -1,29 +1,92 @@
-.shop-gallery{
+:host{
+  --carousel-width: 325px;
+}
+
+.shop-gallery {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
-  width: fit-content;
-  overflow: scroll;
+  width: var(--carousel-width);
   height: 100%;
 }
 
-.shop-item{
+.shop-item {
+  position: absolute;
   border: 1px solid rgba(128, 128, 128, 0.256);
   height: fit-content;
+  border-radius: 8px;
 }
 
-.picture{
-  width: 325px;
-
+li {
+  flex: 0 0 100%;
+  scroll-snap-align: center
 }
 
-.name-and-price{
+
+
+ul {
+  width: var(--carousel-width);
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  scroll-snap-type: x mandatory;
+}
+
+.name-and-price {
   font-weight: 600;
   display: flex;
   justify-content: space-between;
 }
 
-.description{
+.description {
   color: grey;
 }
 
+.carousel{
+  display: flex;
+  width: var(--carousel-width);
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  anchor-name: --carousel;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar{
+  display: none;
+}
+
+.carousel::scroll-button(right), .carousel::scroll-button(left){
+  content: '>';
+  width: 20px;
+  border: none;
+  border-radius: 50%;
+  padding-bottom: .1em;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --carousel;
+  position-area: right center;
+  translate: -150%;
+}
+
+.carousel::scroll-button(left){
+  content: '<';
+  position-area: left center;
+  translate: 50%;
+}
+
+.carousel::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{
+  opacity: 0.5;
+  cursor: default;
+}
+
+
+.slide{
+
+}
+
+.picture {
+  width: var(--carousel-width);
+  border-radius: 8px 8px 0 0;
+  scroll-snap-align: start;
+}
