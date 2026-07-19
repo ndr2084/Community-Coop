@@ -6,8 +6,8 @@ html, body{
   width :100%;
   margin: 0;
   padding: 0;
-  background: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background: rgb(80, 14, 1);
+  color: white;
   font-family: "Geist Pixel", sans-serif;
 
 }
@@ -29,10 +29,7 @@ input{
 
 .button-text{
   color: white;
-  margin: 10px;
-  border: 1px solid rgb(255, 255, 255);
   text-align: center;
-  background: rgb(34, 116, 165);
 }
 
 .button-text:hover{

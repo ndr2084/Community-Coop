@@ -1,92 +1,23 @@
-:host{
+:host {
   display: block;
   flex-direction: column;
-  justify-content: center;
   height: 100%;
   overflow: scroll;
+  }
 
-
-}
-
-.greeting{
-  background: rgb(217, 3, 104);
-  padding: 8px;
-  border: 4px solid rgb(34, 116, 165);
-}
-
-h1{
-  border: 1px solid white;
-  padding-left: 8px;
-}
-
-h4{
-  color: black;
-}
-
-
-.user-action-filter{
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  gap: 0;
-
-}
-
-.logo{
-  font-size: 128px;
-  color: black;
-}
-
-.card{
-  border: 4px solid rgb(134, 134, 134);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-
-  background: rgb(19, 19, 19);
-}
-
-.user-action-filter{
-  border: 4px solid rgb(0, 204, 102);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  gap: 10px;
-  padding: 10px;
-  background: black;
-}
-
-
-
-.card-description{
-  margin: 10px;
-  text-align: center;
-}
-
-.hero-components{
-  width: 100%;
+app-hero-section{
+  display: block;
   height: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 0;
-  flex-direction: column;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
+  background-image: url('/hero-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 16px;
 }
 
-.hero-section{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  overflow: scroll;
-  height: 100%;
+.random-block{
+  display: block;
+  height: 500px;
 }

@@ -1,0 +1,62 @@
+.greeting{
+  position: absolute;
+}
+
+h1{
+  font-size: 64px;
+}
+
+h4{
+  color: black;
+}
+
+.grid-wrapper{
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(14, auto);
+  grid-template-columns: repeat(14, 1fr);
+  gap: 8px;
+
+}
+
+.card{
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+
+  /* From https://css.glass */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.256);
+}
+
+.card-description{
+  margin: 10px;
+  text-align: center;
+}
+
+.zero{
+  background: none;
+  position: absolute;
+  height: fit-content;
+  top: 0px;
+}
+.one{
+  grid-row: 1/2;
+  grid-column: 10/13;
+
+}
+
+.two{
+  grid-row: 2/3;
+  grid-column: 10/13;
+}
+
+.three{
+  grid-row: 3/4;
+  grid-column: 10/13;
+}

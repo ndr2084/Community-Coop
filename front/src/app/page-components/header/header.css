@@ -1,5 +1,6 @@
 :host{
 width: 100%;
+border-bottom: 1px solid black;
 }
 
 h2{
@@ -8,7 +9,7 @@ h2{
 }
 
 #default-header{
-  background: rgb(20, 20, 20);
+  background: rgb(34, 34, 34);
   display: flex;
   padding:  0 8px;
 }
@@ -32,13 +33,13 @@ h2{
 
 .shopping-search-bar{
   width: 100%;
-  border: 1px solid white;
+  border: 1px solid rgb(69, 69, 69);
+  background: white;
   outline: none;
   padding: 2px 4px;
 }
 
 .submit-button{
-  border: 1px solid white;
   color: white;
   position: absolute;
   top: 50%;
@@ -46,11 +47,12 @@ h2{
   transform: translateY(-50%);
   border: none;
   background: transparent;
-  color: yellow;
-  border: 1px solid white;
-  font-size: 12px;
+  font-size: 10px;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 50%;
+  height: 20px;
+  aspect-ratio: 1/1;
+  text-align: center;
   background: rgb(40, 40, 40);
   padding: 1px;
 
