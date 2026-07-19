@@ -12,7 +12,7 @@ app-hero-section{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 16px;
+  overflow: hidden;
   margin: 16px;
   border-radius: 16px;
 }

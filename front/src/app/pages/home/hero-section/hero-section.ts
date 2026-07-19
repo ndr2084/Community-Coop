@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserIndexService } from '../../../services/user-index-service';
+import { Header } from "../../../page-components/header/header";
 
 @Component({
   selector: 'app-hero-section',
-  imports: [],
+  imports: [Header],
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.css',
 })
