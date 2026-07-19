@@ -5,12 +5,11 @@
 .shop-gallery {
   display: flex;
   gap: 16px;
-  width: var(--carousel-width);
+
   height: 100%;
 }
 
 .shop-item {
-  position: absolute;
   border: 1px solid rgba(128, 128, 128, 0.256);
   height: fit-content;
   border-radius: 8px;
@@ -89,4 +88,5 @@ ul {
   width: var(--carousel-width);
   border-radius: 8px 8px 0 0;
   scroll-snap-align: start;
+  object-fit: fill;
 }
