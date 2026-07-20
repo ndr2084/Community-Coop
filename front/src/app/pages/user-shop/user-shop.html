@@ -1,9 +1,15 @@
-<h1> {{index.userIndex.name}}'s Shop</h1>
+<app-header></app-header>
+<div class="grid-wrapper">
 
-<button class="button-text" (click)="addItem()">Add Item</button>
-<button class="button-text" (click)="removeItem()">Remove Item</button>
-<button class="button-text" (click)="editItem()">Edit Item</button>
-<button class="button-text" (click)="viewShop()">View in Buyer Mode</button>
+  <nav class="side-panel">
+    <ul class="panel-button-list">
+      <button class="add-item panel-button" (click)="addItem()">Add Item</button>
+      <button class="remove-item panel-button" (click)="removeItem()">Remove Item</button>
+      <button class="edit-item panel-button" (click)="editItem()">Edit Item</button>
+      <button class="buyer-mode panel-button" (click)="viewShop()">Buyer Mode</button>
+    </ul>
+  </nav>
+</div>
 
 <div class="shop-gallery">
   @for(item of itemList() ; track item.id){
@@ -34,7 +40,5 @@
     }
     <p>condition: {{item.condition}}</p>
   </div>
-
   }
-
 </div>

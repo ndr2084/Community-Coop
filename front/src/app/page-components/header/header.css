@@ -1,6 +1,7 @@
 :host{
 width: 100%;
-border-bottom: 1px solid black;
+border-bottom: 1px solid rgb(177, 49, 27);
+height: fit-content;
 }
 
 h2{
@@ -9,7 +10,7 @@ h2{
 }
 
 #default-header{
-  background: rgb(34, 34, 34);
+  background: rgb(154, 72, 52);
   display: flex;
   padding:  0 8px;
 }
@@ -20,7 +21,7 @@ h2{
 }
 
 .shopping-utilities{
-  width: 95%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -29,6 +30,7 @@ h2{
 .search-container{
   width: 50%;
   position: relative;
+  color: black;
 }
 
 .shopping-search-bar{

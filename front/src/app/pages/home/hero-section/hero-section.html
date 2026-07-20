@@ -1,23 +1,21 @@
+<app-header></app-header>
+
 <div class="grid-wrapper">
-
-  <app-header></app-header>
-
   <div class="zero card greeting">
-    <h1>Welcome,</h1>
-    <h1>{{index.userIndex.name}}</h1>
+    <h1 class="greeting">Welcome, {{index.userIndex.name}}</h1>
   </div>
 
   <div class="one buy card">
-    <p class="card-description">Shop local and find sweet deals</p>
+    <p class="card-description">Shop local for sweet deals</p>
     <h1 (click)="viewShop()" class="button-text">Shop</h1>
   </div>
 
-  <div class="two rent card">
+  <div class="three rent card">
     <p class="card-description">Your outdoor adventure on a budget</p>
     <h1 (click)="viewRentals()" class="button-text">Rent</h1>
   </div>
 
-  <div class="three sell card">
+  <div class="two sell card">
     <p class="card-description">Sell your items on the market</p>
     <h1 (click)="viewSelling()" class="button-text">Sell</h1>
   </div>

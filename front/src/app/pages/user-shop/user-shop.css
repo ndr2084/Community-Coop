@@ -2,33 +2,25 @@
   --carousel-width: 325px;
 }
 
+.grid-wrapper{
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: repeat(14, 1fr);
+  height: fit-content;
+  padding: 8px;
+  gap: 8px;
+}
+
 .shop-gallery {
   display: flex;
-  gap: 16px;
-
   height: 100%;
+  gap: 8px;
 }
 
 .shop-item {
   border: 1px solid rgba(128, 128, 128, 0.256);
   height: fit-content;
   border-radius: 8px;
-}
-
-li {
-  flex: 0 0 100%;
-  scroll-snap-align: center
-}
-
-
-
-ul {
-  width: var(--carousel-width);
-  overflow: scroll;
-  display: flex;
-  align-items: center;
-  gap: 1vw;
-  scroll-snap-type: x mandatory;
 }
 
 .name-and-price {
@@ -79,14 +71,48 @@ ul {
   cursor: default;
 }
 
+.side-panel{
+  overflow: hidden;
+  width: 100%;
+  grid-row: 1;
+  grid-column: 3/12;
+}
 
-.slide{
+.panel-button-list{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  height: 100px;
+  border-radius: 8px;
 
+  /*glass effect start*/
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.256);
+  /*glass effect end*/
+}
+
+.panel-button{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: 0.18s all;
+}
+
+.panel-button:hover{
+  background: rgb(64, 64, 64);
+}
+
+.panel-button:active{
+  background: rgb(126, 126, 126);
 }
 
 .picture {
   width: var(--carousel-width);
   border-radius: 8px 8px 0 0;
   scroll-snap-align: start;
-  object-fit: fill;
+  background-size: cover;
 }
