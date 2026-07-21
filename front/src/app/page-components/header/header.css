@@ -10,7 +10,7 @@ h2{
 }
 
 #default-header{
-  background: rgb(154, 72, 52);
+  background: #9E3333;
   display: flex;
   padding:  0 8px;
 }

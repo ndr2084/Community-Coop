@@ -1,0 +1,112 @@
+.grid-wrapper{
+  display: grid;
+  grid-template-rows: 100px;
+  grid-template-columns: 100px;
+  gap: 8px;
+  height: 100%;
+}
+
+.grid-wrapper > * {
+  border: 1px solid white;
+}
+
+.portage{
+  border-radius: 8px 0 0 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/portage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-row: 1/6;
+  grid-column: 1/4;
+}
+
+.books{
+  border-radius: 0 0 0 8px;
+  width: 100%;
+  height: 100%;
+  background-image: url('/books.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-row: 6/12;
+  grid-column: 1/5;
+}
+
+.camping{
+  border-radius: 0 8px 8px 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/camping.png');
+  background-size: cover;
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  grid-row: 1/12;
+  grid-column: 7/12;
+}
+
+.climbing{
+  width: 100%;
+  height: 100%;
+  background-image: url('/climbing.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-row: 6/12;
+  grid-column: 5/7;
+}
+
+.rectangle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rectangle.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-row: 1/6;
+  grid-column: 4/7
+}
+
+.line-one{
+  position: absolute;
+  top: 10%;
+  left: 2%;
+}
+
+.line-two{
+  position: absolute;
+  left: 7%;
+}
+
+.line-three{
+  position: absolute;
+  left: 12%;
+  bottom: 10%;
+}
+
+.title{
+  font-size: 4em;
+}
+
+.category{
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.category-container{
+  position: relative;
+  transition: 0.18s all;
+}
+
+.category-container:hover{
+  opacity: 0.75;
+}
+

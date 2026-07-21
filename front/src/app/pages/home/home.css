@@ -13,11 +13,15 @@ app-hero-section{
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  margin: 16px;
-  border-radius: 16px;
+  margin: 4px;
+  border-radius: 8px;
 }
 
-.random-block{
+app-category-section{
   display: block;
-  height: 500px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 4px;
 }
