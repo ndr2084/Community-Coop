@@ -1,15 +1,19 @@
-<nav id="default-header">
+<nav class="header">
   <div class="logo" (click)="returnToHome()">
-    <h2 class="home-button">CLIMBERS</h2>
-    <h2 class="home-button">COOP</h2>
+    <h3 class="home-button">CLIMBERS COOP</h3>
   </div>
-  <ul class="shopping-utilities">
-    <div class="search-container">
-      <input type="text" class="shopping-search-bar">
-      <button class="submit-button" type="submit">GO</button>
-    </div>
-    <button (click)="chooseShoppingLocation()"class="header-button">{{index.userIndex.name}}'s Shop</button>
-    <button (click)="viewOrderHistory()"class="header-button">Order History</button>
-    <button (click)="viewCart()" class="header-button">Cart</button>
-  </ul>
+
+  <div class="shopping-utilities">
+    <button (click)="chooseShoppingLocation()" class="header-button one">{{index.userIndex.name}}'s Shop</button>
+    <button (click)="viewOrderHistory()" class="header-button two">Order History</button>
+    <button (click)="viewCart()" class="header-button three">Cart</button>
+  </div>
+
+  <div class="search">
+    <p class="search-icon">⌕</p>
+  </div>
+
+  <div class="profile">
+    <p class="profile-icon">☰</p>
+  </div>
 </nav>

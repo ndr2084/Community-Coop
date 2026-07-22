@@ -1,0 +1,78 @@
+.shop-item {
+  height: fit-content;
+  background: rgb(255, 255, 255);
+  color: black;
+  position: relative;
+  padding: 2px;
+  border-radius: 16px;
+  border: 2px solid black;
+}
+
+.name-and-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.description {
+  color: grey;
+}
+
+.item-meta-data{
+  bottom: 0px;
+  width: var(--carousel-width);
+  color: black;
+
+}
+
+.sell-status-and-condition{
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel{
+  display: flex;
+  margin: 0 auto;
+  width: 325px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  anchor-name: --carousel;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar{
+  display: none;
+}
+
+.carousel::scroll-button(right), .carousel::scroll-button(left){
+  content: '>';
+  width: 20px;
+  border: none;
+  border-radius: 50%;
+  padding-bottom: .1em;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --carousel;
+  position-area: right center;
+  translate: -150%;
+}
+
+.carousel::scroll-button(left){
+  content: '<';
+  position-area: left center;
+  translate: 50%;
+}
+
+.carousel::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{
+  opacity: 0.5;
+  cursor: default;
+}
+
+.picture {
+  width: var(--carousel-width);
+  scroll-snap-align: start;
+  border-radius: 16px;
+}
+

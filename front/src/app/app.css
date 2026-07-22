@@ -4,11 +4,7 @@
   flex-direction: column;
 }
 
-app-header{
-  position: sticky;
-  top: 0;
-  height: fit-content;
-}
+
 
 main{
   height: 100%;

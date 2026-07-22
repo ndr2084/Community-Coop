@@ -1,0 +1,28 @@
+  @for(item of itemList() ; track item.id){
+  <div class="shop-item">
+    <div class="carousel" aria-label="image carousel">
+      @for(picture of item.picture ; track picture)
+      {
+      <img class="picture" src="{{picture}}" alt="{{item.name}}">
+      }
+    </div>
+
+
+    <div class="item-meta-data">
+      <div class="name-and-price">
+        <p>{{item.name}}</p>
+        <p> ${{item.price}}</p>
+      </div>
+      <div class="sell-status-and-condition">
+        <p class="description">{{item.description}}</p>
+        @if(item.isForRent){
+        <p>is for rent: {{item.isForRent}}</p>
+        }
+        @if(item.isForSale){
+        <p>is for sale: {{item.isForSale}}</p>
+        }
+        <p>condition: {{item.condition}}</p>
+      </div>
+    </div>
+  </div>
+  }
