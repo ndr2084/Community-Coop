@@ -1,22 +1,16 @@
-:host{
-  display: flex;
-  flex-direction: column;
-}
-
 .panel{
   overflow: hidden;
   width: 100%;
-  grid-row: 1;
-  grid-column: 3/12;
+  height: 100%;
 }
 
 .panel-button-list{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   overflow: hidden;
-  height: 100px;
+  height: 100%;
   border-radius: 8px;
 
   /*glass effect start*/

@@ -1,5 +1,5 @@
 .header{
-  height: 35px;
+  height: auto;
   padding: 8px;
   display: grid;
   grid-template-columns: repeat(24, minmax(20px, auto));
@@ -16,7 +16,7 @@
 .logo{
   background-color: rgb(230, 241, 108);
   color: black;
-  border-radius: 24px;
+  border-radius: 12px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
   background-color: rgb(230, 241, 108);
   color: black;
   flex-direction: row;
-  border-radius: 24px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-around;

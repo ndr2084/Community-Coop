@@ -1,30 +1,40 @@
 :host{
-  --bg-color: rgb(0, 208, 255);
+  --bg-color: rgb(251, 255, 207);
   background-color: var(--bg-color);
   height: 100%;
-  display: block;
-  margin: 4px;
+  display: flex;
+  flex-direction: column;
   border-radius: 8px;
 }
 
+.side-panel{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+
+}
 
 app-panel {
-  display: grid;
-  grid-template-rows: 50px;
-  grid-template-columns: repeat(14, 1fr);
-  height: fit-content;
+  width: 35px;
   padding: 8px;
   gap: 8px;
-  background-color: var(--bg-color);
-
 }
 
 app-gallery{
   --carousel-width: 325px;
-  width: 100%;
   height: 100%;
-  display: flex;
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--carousel-width), 1fr));
+  grid-auto-rows: 1px;
   gap: 8px;
-  background-color: var(--bg-color);
+  overflow: scroll;
+}
 
+.main-content{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
 }

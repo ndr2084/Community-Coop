@@ -3,35 +3,65 @@
   background: rgb(255, 255, 255);
   color: black;
   position: relative;
-  padding: 2px;
-  border-radius: 16px;
-  border: 2px solid black;
+  padding: 1px;
+  border: 1px solid black;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.name-and-price {
+.item-meta-data {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-weight: 600;
+  flex-direction: column;
+  gap: 8px;
+  bottom: 0px;
+  width: var(--carousel-width);
+  color: black;
+}
+
+.tag {
+  background: rgba(0, 255, 251, 0.337);
+  border-radius: 2px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+
+.meta-data-padding{
+  padding: 0 8px;
+}
+
+.sell-and-rental-status {
+  display: flex;
+  flex-flow: row wrap;
+  width: fit-content;
+  gap: 8px;
 }
 
 .description {
   color: grey;
+  background: white;
+  font-size: 14px;
 }
 
-.item-meta-data{
-  bottom: 0px;
-  width: var(--carousel-width);
+.price{
   color: black;
-
+  font-size: 12px;
+  background: rgb(234, 234, 234);
+  font-weight: 100;
+  padding: 6px;
 }
 
-.sell-status-and-condition{
+.name-and-price {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  font-weight: 600;
+  background: white;
+  gap: 8px;
 }
 
-.carousel{
+.carousel {
   display: flex;
   margin: 0 auto;
   width: 325px;
@@ -41,16 +71,17 @@
   scroll-snap-type: x mandatory;
 }
 
-.carousel::-webkit-scrollbar{
+.carousel::-webkit-scrollbar {
   display: none;
 }
 
-.carousel::scroll-button(right), .carousel::scroll-button(left){
-  content: '>';
+.carousel::scroll-button(right),
+.carousel::scroll-button(left) {
+  content: ">";
   width: 20px;
   border: none;
   border-radius: 50%;
-  padding-bottom: .1em;
+  padding-bottom: 0.1em;
   aspect-ratio: 1/1;
   cursor: pointer;
   position: fixed;
@@ -59,13 +90,14 @@
   translate: -150%;
 }
 
-.carousel::scroll-button(left){
-  content: '<';
+.carousel::scroll-button(left) {
+  content: "<";
   position-area: left center;
   translate: 50%;
 }
 
-.carousel::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{
+.carousel::scroll-button(right):disabled,
+.carousel::scroll-button(left):disabled {
   opacity: 0.5;
   cursor: default;
 }
@@ -73,6 +105,4 @@
 .picture {
   width: var(--carousel-width);
   scroll-snap-align: start;
-  border-radius: 16px;
 }
-

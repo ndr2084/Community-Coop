@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, viewChildren, ElementRef, afterRenderEffect } from '@angular/core';
 import { UserIndexService } from '../../../services/user-index-service';
 import { UserShopService } from '../../../services/user-shop-service';
 import { Dialog } from '@angular/cdk/dialog';
@@ -25,6 +25,36 @@ export class Gallery {
 
   //EXTERNAL VARIABLES
   readonly itemList = this.userShopService.items();
+
+  //MASONRY LAYOUT
+  // must match `grid-auto-rows` / `gap` on app-gallery in user-shop.css
+  private static readonly ROW_UNIT = 1;
+  private static readonly ROW_GAP = 8;
+
+  private readonly shopItemEls = viewChildren<ElementRef<HTMLElement>>('shopItemEl');
+
+  constructor() {
+    afterRenderEffect((onCleanup) => {
+      const elements = this.shopItemEls().map((ref) => ref.nativeElement);
+
+      const observers = elements.map((el) => {
+        const observer = new ResizeObserver(() => this.applySpan(el));
+        observer.observe(el);
+        this.applySpan(el);
+        return observer;
+      });
+
+      onCleanup(() => observers.forEach((observer) => observer.disconnect()));
+    });
+  }
+
+  private applySpan(el: HTMLElement) {
+    const height = el.getBoundingClientRect().height;
+    const span = Math.ceil(
+      (height + Gallery.ROW_GAP) / (Gallery.ROW_UNIT + Gallery.ROW_GAP)
+    );
+    el.style.gridRowEnd = `span ${span}`;
+  }
 
   //CAROUSEL FUNCITONALITY
 
