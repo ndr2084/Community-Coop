@@ -3,19 +3,19 @@
   background: rgb(255, 255, 255);
   color: black;
   position: relative;
-  padding: 1px;
   border: 1px solid black;
-  padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: fit-content;
+  padding: 4px;
 }
 
 .item-meta-data {
+
   display: flex;
   flex-direction: column;
   gap: 8px;
-  bottom: 0px;
   width: var(--carousel-width);
   color: black;
 }
@@ -27,9 +27,6 @@
   color: rgb(0, 0, 0);
 }
 
-.meta-data-padding{
-  padding: 0 8px;
-}
 
 .sell-and-rental-status {
   display: flex;
@@ -49,7 +46,7 @@
   font-size: 12px;
   background: rgb(234, 234, 234);
   font-weight: 100;
-  padding: 6px;
+  padding: 8px;
 }
 
 .name-and-price {
