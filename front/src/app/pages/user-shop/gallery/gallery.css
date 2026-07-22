@@ -103,3 +103,7 @@
   width: var(--carousel-width);
   scroll-snap-align: start;
 }
+
+.card-size{
+  }
+

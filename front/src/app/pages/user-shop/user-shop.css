@@ -27,6 +27,7 @@ app-gallery{
   min-width: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--carousel-width), 1fr));
+  grid-auto-rows: auto;
   gap: 8px;
   overflow: scroll;
 }
