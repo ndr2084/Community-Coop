@@ -3,6 +3,7 @@
   padding: 8px;
   display: grid;
   grid-template-columns: repeat(24, minmax(20px, auto));
+  background: orange;
 }
 
 .glass{
