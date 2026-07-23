@@ -5,6 +5,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { UserShopItemCreation } from '../forms/user-shop-item-creation/user-shop-item-creation';
 import { Panel } from "../panel/panel";
 
+
 @Component({
   selector: 'app-gallery',
   imports: [Panel],

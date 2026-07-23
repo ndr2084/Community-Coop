@@ -1,5 +1,6 @@
+<div class="grid">
 @for(item of itemList() ; track item.id){
-<div class="shop-item card-size">
+<div class="shop-item">
   <div class="carousel" aria-label="image carousel">
     @for(picture of item.picture ; track picture)
     {
@@ -26,3 +27,4 @@
   </div>
 </div>
 }
+</div>

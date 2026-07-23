@@ -16,6 +16,7 @@ app-header{
 .shop-content{
   display: flex;
   overflow-y: scroll;
+  width: 100%;
 }
 
 app-panel {
@@ -32,14 +33,7 @@ app-panel {
 }
 
 app-gallery{
-  padding: 32px;
-  gap:16px;
-  flex-grow: 1;
-  --carousel-width: 325px;
-  flex: 1;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--carousel-width), 1fr));
-  overflow: scroll;
-
+  margin: auto;
+  width: 100%;
+  overflow-x: hidden;
 }
