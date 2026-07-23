@@ -1,40 +1,37 @@
 :host{
-  --bg-color: rgb(251, 255, 207);
-  background-color: var(--bg-color);
+  display: grid;
+  grid-template-areas:
+  "header header header header header header header header header"
+  "panel gallery gallery gallery gallery gallery gallery gallery gallery"
+  ;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
 }
 
-.side-panel{
-  height: 200px;
-  display: flex;
-  justify-content: center;
-
+app-header{
+  grid-area: header;
 }
 
 app-panel {
+  grid-area: panel;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
   width: 35px;
   padding: 8px;
   gap: 8px;
+
 }
 
 app-gallery{
+  margin: 32px;
+  grid-area: gallery;
   --carousel-width: 325px;
-  height: 100%;
+  height: auto;
   flex: 1;
-  min-width: 0;
+  max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--carousel-width), 1fr));
   grid-auto-rows: auto;
-  gap: 8px;
-  overflow: scroll;
-}
-
-.main-content{
-  display: flex;
-  height: 100%;
-  width: 100%;
   overflow: scroll;
 }

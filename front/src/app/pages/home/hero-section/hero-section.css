@@ -39,13 +39,12 @@ h4{
   background: none;
   height: fit-content;
   grid-row: 2/3;
-
 }
 
 .one{
   grid-row: 2/3;
   grid-column: 10/12;
-  background: #0193c6
+  color: black;
 
 
 }
@@ -53,11 +52,29 @@ h4{
 .two{
   grid-row: 2/3;
   grid-column: 12/14;
-  background: #0193c6
+  color: black;
 }
 
 .three{
   grid-row: 3/4;
   grid-column: 10/14;
-  background: #0193c6;
+  color: black;
 }
+
+.button-text{
+  color: black;
+}
+
+.hero-button:hover{
+  background: rgba(33, 33, 33, 0.256);
+}
+
+.hero-button:active{
+  background: rgba(33, 33, 33, 0.512);
+}
+
+.glass{
+  border: 1px solid rgba(35, 210, 230, 0.436);
+  background: rgba(42, 206, 193, 0.216);
+}
+

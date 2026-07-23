@@ -5,8 +5,15 @@
   grid-template-columns: repeat(24, minmax(20px, auto));
 }
 
+.glass{
+  box-shadow: none;
+  border: none;
+  border-radius: none;
+}
+
 .header > *{
   overflow: hidden;
+
 }
 
 .home-button{
@@ -14,7 +21,6 @@
 }
 
 .logo{
-  background-color: rgb(230, 241, 108);
   color: black;
   border-radius: 12px;
   cursor: pointer;
@@ -25,19 +31,17 @@
 }
 
 .shopping-utilities{
-  background-color: rgb(230, 241, 108);
   color: black;
   flex-direction: row;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  grid-column:6/20;
+  grid-column:10/16;
 }
 
 .misc{
-  background-color: rgb(230, 241, 108);
-  color: black;
+  color: rgb(0, 0, 0);
   flex-direction: row;
   border-radius: 24px;
   grid-column: 12;
@@ -52,11 +56,10 @@
 }
 
 .header-button:hover{
-  background: rgb(246, 253, 164);
+  background: rgba(216, 216, 216, 0.602);
 }
 
 .search{
-  background-color: rgb(230, 241, 108);
   color: black;
   flex-direction: row;
   border-radius: 24px;
@@ -80,7 +83,6 @@
 
 .profile{
   position: relative;
-  background-color: rgb(230, 241, 108);
   color: black;
   flex-direction: row;
   border-radius: 24px;
