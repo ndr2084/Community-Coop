@@ -67,10 +67,12 @@ h4{
 
 .hero-button:hover{
   background: rgba(33, 33, 33, 0.256);
+  color: white;
 }
 
 .hero-button:active{
   background: rgba(33, 33, 33, 0.512);
+  color: white;
 }
 
 .glass{

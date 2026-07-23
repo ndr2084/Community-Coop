@@ -20,10 +20,11 @@
 }
 
 .panel-button:hover{
-  background: rgb(64, 64, 64);
+  background: rgba(33, 33, 33, 0.256);
   color: white;
 }
 
 .panel-button:active{
-  background: rgb(126, 126, 126);
+  background: rgba(33, 33, 33, 0.512);
+  color: white;
 }
