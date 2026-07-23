@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: 8px;
   width: fit-content;
-
+  padding: 8px;
 }
 
 .item-meta-data {
@@ -103,7 +103,4 @@
   width: var(--carousel-width);
   scroll-snap-align: start;
 }
-
-.card-size{
-  }
 

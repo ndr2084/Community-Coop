@@ -1,24 +1,10 @@
-.panel{
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-
 .panel-button-list{
   display: flex;
   flex-direction: column;
-  width: 100%;
-  justify-content: center;
   overflow: hidden;
-  height: 100%;
+  height: 200px;
+  border: 1px solid black;
   border-radius: 8px;
-
-  /*glass effect start*/
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  height: 100%;
-  color: black;
-  /*glass effect end*/
 }
 
 .panel-button{
@@ -31,6 +17,7 @@
 
 .panel-button:hover{
   background: rgb(64, 64, 64);
+  color: white;
 }
 
 .panel-button:active{

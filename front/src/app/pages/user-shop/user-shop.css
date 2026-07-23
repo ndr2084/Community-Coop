@@ -1,37 +1,43 @@
 :host{
-  display: grid;
-  grid-template-areas:
-  "header header header header header header header header header"
-  "panel gallery gallery gallery gallery gallery gallery gallery gallery"
-  ;
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
 app-header{
-  grid-area: header;
+  width: 100%;
+  height: fit-content;
+}
+
+.shop-content{
+  display: flex;
+  overflow-y: scroll;
 }
 
 app-panel {
-  grid-area: panel;
+  flex-shrink: 1;
+  margin: 8px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: space-around;
   align-items: center;
-  height: 200px;
-  width: 35px;
+  width: fit-content;
   padding: 8px;
-  gap: 8px;
-
+  border: 1px solid black;
+  border-radius: 8px;
+  color: black;
 }
 
 app-gallery{
-  margin: 32px;
-  grid-area: gallery;
+  padding: 32px;
+  gap:16px;
+  flex-grow: 1;
   --carousel-width: 325px;
-  height: auto;
   flex: 1;
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--carousel-width), 1fr));
-  grid-auto-rows: auto;
   overflow: scroll;
+
 }
