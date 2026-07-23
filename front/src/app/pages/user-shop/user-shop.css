@@ -16,7 +16,7 @@ app-panel {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 200px;
   width: 35px;
   padding: 8px;
   gap: 8px;

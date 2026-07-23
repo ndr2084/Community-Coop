@@ -1,8 +1,24 @@
 <nav class="panel">
   <ul class="panel-button-list">
-    <button class="add-item panel-button" (click)="addItem()">Add Item</button>
-    <button class="remove-item panel-button" (click)="removeItem()">Remove Item</button>
-    <button class="edit-item panel-button" (click)="editItem()">Edit Item</button>
-    <button class="buyer-mode panel-button" (click)="viewShop()">Buyer Mode</button>
+    <button class="add-item panel-button" (click)="addItem()">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="##000000">
+        <path d="M446.67-120v-326.67H120v-66.66h326.67V-840h66.66v326.67H840v66.66H513.33V-120h-66.66Z" />
+      </svg>
+      <p>add</p>
+    </button>
+    <button class="remove-item panel-button" (click)="removeItem()"> <svg xmlns="http://www.w3.org/2000/svg"
+        height="20px" viewBox="0 -960 960 960" width="20px" fill="##000000">
+        <path
+          d="m332-285.33 148-148 148 148L674.67-332l-148-148 148-148L628-674.67l-148 148-148-148L285.33-628l148 148-148 148L332-285.33ZM480-80q-82.33 0-155.33-31.5-73-31.5-127.34-85.83Q143-251.67 111.5-324.67T80-480q0-83 31.5-156t85.83-127q54.34-54 127.34-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82.33-31.5 155.33-31.5 73-85.5 127.34Q709-143 636-111.5T480-80Zm0-66.67q139.33 0 236.33-97.33t97-236q0-139.33-97-236.33t-236.33-97q-138.67 0-236 97-97.33 97-97.33 236.33 0 138.67 97.33 236 97.33 97.33 236 97.33ZM480-480Z" />
+      </svg>
+      <p>remove</p>
+    </button>
+    <button class="edit-item panel-button" (click)="editItem()"><svg xmlns="http://www.w3.org/2000/svg" height="20px"
+        viewBox="0 -960 960 960" width="20px" fill="#000000">
+        <path
+          d="M186.67-186.67H235L680-631l-48.33-48.33-445 444.33v48.33ZM120-120v-142l559.33-558.33q9.34-9 21.5-14 12.17-5 25.5-5 12.67 0 25 5 12.34 5 22 14.33L821-772q10 9.67 14.5 22t4.5 24.67q0 12.66-4.83 25.16-4.84 12.5-14.17 21.84L262-120H120Zm652.67-606-46-46 46 46Zm-117 71-24-24.33L680-631l-24.33-24Z" />
+      </svg>
+      <p>edit</p>
+    </button>
   </ul>
 </nav>
