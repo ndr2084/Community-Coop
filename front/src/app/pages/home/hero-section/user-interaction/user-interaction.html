@@ -1,1 +1,28 @@
-<p>user-interaction works!</p>
+<form [formGroup]="searchForm" class="search-form" (submit)="submitForm()">
+  <h2>Start Your Search Here</h2>
+
+  <label for="country">Country</label>
+  <input type="text" id="country" formControlName="country">
+
+  <label for="province">Province</label>
+  <input type="text" id="province" formControlName="province">
+
+  <label for="city">City</label>
+  <input type="text" id="city" formControlName="city">
+
+  <label for="combo">Item</label>
+  <input list="items" name="combo" id="combo" formControlName="item">
+    <datalist id="items">
+      <option value="Carabiner"></option>
+      <option value="Tent"></option>
+      <option value="Canoe"></option>
+      <option value="Kayak"></option>
+      <option value="Harness"></option>
+      <option value="Rope"></option>
+    </datalist>
+
+    <div class="buttons">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset </button>
+    </div>
+</form>
