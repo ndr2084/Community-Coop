@@ -32,14 +32,12 @@ app-panel {
 }
 
 app-gallery{
-  padding: 32px;
-  gap:16px;
-  flex-grow: 1;
-  --carousel-width: 325px;
-  flex: 1;
-  max-width: 100%;
   display: grid;
+  gap: 32px;
+  width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(var(--carousel-width), 1fr));
-  overflow: scroll;
+  padding: 32px;
 
+  --carousel-width: 325px;
+  overflow: scroll;
 }

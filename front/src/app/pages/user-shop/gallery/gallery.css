@@ -1,5 +1,6 @@
 .shop-item {
-  height: fit-content;
+  height: 100%;
+  width: 100%;
   background: rgb(255, 255, 255);
   color: black;
   position: relative;
@@ -9,6 +10,7 @@
   gap: 8px;
   width: fit-content;
   padding: 8px;
+  margin: auto;
 }
 
 .item-meta-data {
@@ -101,6 +103,7 @@
 
 .picture {
   width: var(--carousel-width);
+  aspect-ratio: 1/0.8;
   scroll-snap-align: start;
 }
 

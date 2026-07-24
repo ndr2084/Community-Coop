@@ -1,0 +1,44 @@
+.greeting{
+  font-weight: 800;
+  line-height: 55px;
+  letter-spacing: -1.5px;
+}
+
+.tag{
+  font-size: 16px;
+  background: rgb(151, 28, 28);
+  width: fit-content;
+  color: white;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-weight: 400;
+}
+
+.sub-heading{
+  line-height: 25px;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0);
+  padding: 8px;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: rgb(247, 255, 158);
+  color: black;
+  width: fit-content;
+  border-radius: 24px;
+  padding: 8px 32px;
+  font-size: 14px;
+}

@@ -3,19 +3,21 @@
   flex-direction: column;
   height: 100%;
   overflow: scroll;
+  background: rgba(29, 35, 42)
   }
 
 app-hero-section{
   display: block;
   height: 100%;
-  background-image: url('/hero-image.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   overflow: hidden;
-  margin: 4px;
-  border-radius: 8px;
+  margin: 32px;
+  padding: 32px;
+  border-radius: 24px;
+  background: RGB(110, 96, 54);
+background: linear-gradient(180deg,rgba(110, 96, 54, 1) 0%, rgba(29, 35, 42, 1) 54%);
 }
+
+
 
 app-category-section{
   display: block;
@@ -23,5 +25,5 @@ app-category-section{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 4px;
+  margin: 32px;
 }

@@ -1,86 +1,42 @@
 app-header{
   grid-column: 1/16;
   grid-row: 1;
+  color: white;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  background-image: url('/hero-image.png');
+  background-size: cover;
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+app-greeting{
+  height: 100%;
+  width: 40%;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1;
+  font-weight: 1000;
+}
+
+app-user-interaction{
+  width: 100%;
+
 }
 
 h1{
   font-size: 2.5em;
 }
 
-.greeting{
-  position: absolute;
-  font-size: 2em;
-  padding-left: 8px;
-}
-
 h4{
   color: black;
 }
-
-.grid-wrapper{
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  display: grid;
-  grid-template-rows: repeat(14, auto);
-  grid-template-columns: repeat(14, 1fr);
-  gap: 4px;
-  height: 100%;
-  padding: 8px;
-}
-
-.card-description{
-  margin: 10px;
-  text-align: center;
-}
-
-.zero{
-  background: none;
-  height: fit-content;
-  grid-row: 2/3;
-}
-
-.one{
-  grid-row: 2/3;
-  grid-column: 10/12;
-  color: black;
-
-
-}
-
-.two{
-  grid-row: 2/3;
-  grid-column: 12/14;
-  color: black;
-}
-
-.three{
-  grid-row: 3/4;
-  grid-column: 10/14;
-  color: black;
-}
-
-.button-text{
-  color: black;
-}
-
-.hero-button{
-  transition: 0.18s all;
-}
-
-.hero-button:hover{
-  background: rgba(33, 33, 33, 0.256);
-  color: white;
-}
-
-.hero-button:active{
-  background: rgba(33, 33, 33, 0.512);
-  color: white;
-}
-
-.glass{
-  border: 1px solid rgba(0, 0, 0, 0.436);
-  background: rgba(255, 255, 255, 0);
-}
-
