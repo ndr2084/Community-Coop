@@ -1,11 +1,41 @@
 form{
-  border: 1px solid black;
+
   width: fit-content;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  width: 325px;
+  gap: 8px;
+  padding: 32px;
+  border-radius: 0 24px 24px 0;
+  gap: 12px;
+  backdrop-filter: blur(8px);
+  background: rgba(64, 64, 64, 0.221);
+  color: white;
+  height: 100%;
 }
 
-.buttons{
-  display: flex;
-  justify-content: space-around;
+
+
+h2{
+  font-size: 20px;
+  font-weight: 400;
 }
+
+label{
+  font-size: 10px;
+}
+
+input{
+  border-radius: 24px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.348);
+  background: white;
+  padding: 8px 0px;
+}
+
+.pr-btn{
+  width: 100%;
+}
+
+

@@ -20,6 +20,8 @@ input{
   background: grey;
   border: 1px solid white;
   border-radius: 8px;
+  color: black;
+  margin: 0px;
 }
 
 *{
@@ -30,6 +32,32 @@ input{
 .button-text{
   color: white;
   text-align: center;
+}
+
+.pr-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(247, 255, 158);
+    color: black;
+    border-radius: 24px;
+    padding: 8px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.18s all;
+}
+
+.pr-btn > *{
+  padding: 0 16px;
+
+}
+
+.pr-btn:hover{
+  background: rgb(217, 223, 140);
+}
+
+.pr-btn:active{
+  background: rgb(158, 163, 106);
 }
 
 
