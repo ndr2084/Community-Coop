@@ -6,6 +6,8 @@ import { UserShopItemCreation } from './forms/user-shop-item-creation/user-shop-
 import { UserShopService } from '../../services/user-shop-service';
 import { Gallery } from "./gallery/gallery";
 import { Panel } from "./panel/panel";
+// @ts-ignore
+import Masonry from 'masonry-layout';
 
 @Component({
   selector: 'app-user-shop',
@@ -14,5 +16,6 @@ import { Panel } from "./panel/panel";
   styleUrl: './user-shop.css',
 })
 export class UserShop {
+
 
 }

@@ -107,3 +107,13 @@
   scroll-snap-align: start;
 }
 
+.grid{
+--carousel-width: 325px;
+  padding: 32px;
+  gap: 16px;
+  display: grid;
+  overflow: scroll;
+  grid-template-columns: repeat(auto-fill, minmax(var(--carousel-width), 1fr));
+
+}
+
