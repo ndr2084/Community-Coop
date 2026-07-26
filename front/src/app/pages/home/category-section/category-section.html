@@ -1,11 +1,26 @@
+<h1 class="quicklinks">Quick Links</h1>
 <div class="grid-wrapper">
   <div class="portage category-container">
     <p class="category">Canoes & Kayaks</p>
   </div>
   <div class="rectangle">
-    <h1 class="title line-one">Browse</h1>
-    <h1 class="title line-two">By</h1>
-    <h1 class="title line-three">Category</h1>
+    <form [formGroup]="searchCategory" class="category-search-form" submit="submitForm()">
+      <h1 class="title line-one">Over 50 Categories to Browse</h1>
+
+      <label for="category">Category</label>
+      <input list="category" name="combo" id="combo" formControlName="category">
+      <datalist id="category">
+        <option value="Carabiner"></option>
+        <option value="Tent"></option>
+        <option value="Canoe"></option>
+        <option value="Kayak"></option>
+        <option value="Harness"></option>
+        <option value="Rope"></option>
+      </datalist>
+
+
+
+    </form>
   </div>
   <div class="books category-container">
     <p class="category">Books & Resources</p>
