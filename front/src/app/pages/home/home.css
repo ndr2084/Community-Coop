@@ -8,7 +8,7 @@
 
 app-hero-section{
   display: block;
-  height: 100%;
+  height: fit-content;
   overflow: hidden;
   margin: 32px;
   padding: 64px;
@@ -26,4 +26,5 @@ app-category-section{
   background-position: center;
   background-repeat: no-repeat;
   margin: 32px;
+  padding: 64px;
 }
