@@ -3,15 +3,16 @@
   grid-template-rows: 100px;
   grid-template-columns: 100px;
   gap: 8px;
-  height: 100%;
+  height: 95%;
+  padding: 8px;
+  border-top: 0px;
+  border: 10px solid white;
+  background: rgb(159, 186, 174);
 }
 
-.grid-wrapper > * {
-  border: 1px solid white;
-}
+
 
 .portage{
-  border-radius: 8px 0 0 0;
   width: 100%;
   height: 100%;
   background-image: url('/portage.png');
@@ -19,23 +20,22 @@
   background-position: center;
   background-repeat: no-repeat;
   grid-row: 1/5;
-  grid-column: 1/4;
+  grid-column: 1/6;
 }
 
 .books{
-  border-radius: 0 0 0 8px;
   width: 100%;
-  height: 100%;
+  height: 350px;
   background-image: url('/books.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   grid-row: 5/12;
-  grid-column: 1/5;
+  grid-column: 1/6;
 }
 
 .camping{
-  border-radius: 0 8px 8px 0;
+
   width: 100%;
   height: 100%;
   background-image: url('/camping.png');
@@ -54,7 +54,7 @@
   background-position: center;
   background-repeat: no-repeat;
   grid-row: 5/12;
-  grid-column: 5/7;
+  grid-column: 6/7;
 }
 
 .rectangle{
@@ -63,18 +63,22 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-  background-image: url('/rectangle.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 400px;
+  background: #EDDD53;
+background: radial-gradient(circle, rgb(128, 127, 124) 0%, rgb(42, 76, 124) 66%);
   grid-row: 1/5;
-  grid-column: 4/7
+  grid-column: 6/7;
+  border: 1px solid green;
 }
 
 .line-one{
   width: 300px;
   height: fit-content;
+  letter-spacing: -2px;
+  line-height: 65px;;
+  background: black;
+  border-radius: 8px;
+  padding: 32px;
 }
 
 .title{
@@ -100,8 +104,34 @@
 
 .category-search-form{
   display: flex;
+  gap: 8px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
+
+.combo{
+  all: unset;
+  width: fit-content;
+  padding: 16px 32px;
+  border-radius: 12px;
+  background: rgb(234, 248, 157);
+  color: black;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 1000;
+}
+
+.quicklinks{
+  color: black;
+  background: white;
+  padding: 16px;
+  padding-bottom: 0;
+  border-bottom: 0px;
+}
+
+.default{
+  color: black;
+}

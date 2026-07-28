@@ -2,31 +2,43 @@
   display: block;
   height: 100%;
   overflow: scroll;
-  background: rgba(29, 35, 42)
+
+  background: linear-gradient(180deg, #343434 0%,  #6b8595 100%);
   }
 
-app-hero-section{
+app-header{
   display: block;
+  position: sticky;
+  top: 0;
+  z-index: 100000;
+  border-bottom: 1px solid rgb(143, 143, 143);
+}
+
+app-hero-section{
+  border: 10px solid white;
+  display: block;
+  flex-direction: column;
+  gap: 8px;
   height: fit-content;
   overflow: hidden;
   margin: 32px;
-  padding: 64px;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-radius: 24px;
-  background: RGB(110, 96, 54);
-background: linear-gradient(180deg,rgba(110, 96, 54, 1) 0%, rgba(29, 35, 42, 1) 54%);
+  margin-bottom: 4px;
+
 }
 
 
 
 app-category-section{
   display: block;
-  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 32px;
-  padding: 64px;
+  padding: 4px 32px;
+}
+
+app-footer{
+  display: block;
+  height: fit-content;
+  padding: 4px 32px 32px 32px;
 }
 

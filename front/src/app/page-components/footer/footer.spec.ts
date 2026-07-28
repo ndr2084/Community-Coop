@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuickLinks } from './quick-links';
+import { Footer } from './footer';
 
-describe('QuickLinks', () => {
-  let component: QuickLinks;
-  let fixture: ComponentFixture<QuickLinks>;
+describe('Footer', () => {
+  let component: Footer;
+  let fixture: ComponentFixture<Footer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QuickLinks]
+      imports: [Footer]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(QuickLinks);
+    fixture = TestBed.createComponent(Footer);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

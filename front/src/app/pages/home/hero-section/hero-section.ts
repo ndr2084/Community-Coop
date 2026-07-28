@@ -4,11 +4,10 @@ import { UserIndexService } from '../../../services/user-index-service';
 import { Header } from "../../../page-components/header/header";
 import { Greeting } from "./greeting/greeting";
 import { UserInteraction } from "./user-interaction/user-interaction";
-import { QuickLinks } from "./quick-links/quick-links";
 
 @Component({
   selector: 'app-hero-section',
-  imports: [Header, Greeting, UserInteraction, QuickLinks],
+  imports: [Header, Greeting, UserInteraction],
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.css',
 })

@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { UserIndexService } from '../../services/user-index-service';
 import { HeroSection } from "./hero-section/hero-section";
 import { CategorySection } from "./category-section/category-section";
+import { Footer } from "../../page-components/footer/footer";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, HeroSection, CategorySection],
+  imports: [Header, HeroSection, CategorySection, Footer],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

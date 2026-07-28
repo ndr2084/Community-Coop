@@ -7,12 +7,11 @@ form{
   width: 325px;
   gap: 8px;
   padding: 32px;
-  border-radius: 0 24px 24px 0;
+  height: 100%;
   gap: 12px;
   backdrop-filter: blur(8px);
-  background: rgba(64, 64, 64, 0.221);
+  background: rgba(9, 12, 63, 0.345);
   color: white;
-  height: 100%;
 }
 
 
@@ -27,11 +26,10 @@ label{
 }
 
 input{
-  border-radius: 24px;
   padding: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.348);
-  background: white;
+  background: rgb(236, 235, 235);
   padding: 8px 0px;
+  padding-left: 8px;
 }
 
 .pr-btn{

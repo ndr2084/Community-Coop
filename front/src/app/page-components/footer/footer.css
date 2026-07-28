@@ -1,0 +1,22 @@
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  color: black;
+  padding: 32px;
+}
+
+.border{
+  border: solid 10px white;
+}
+
+.title{
+  font-size: 16px;
+}
+
+.services, .company, .legal{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+

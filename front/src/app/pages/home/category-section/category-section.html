@@ -1,3 +1,4 @@
+<div class="border">
 <h1 class="quicklinks">Quick Links</h1>
 <div class="grid-wrapper">
   <div class="portage category-container">
@@ -5,18 +6,19 @@
   </div>
   <div class="rectangle">
     <form [formGroup]="searchCategory" class="category-search-form" submit="submitForm()">
-      <h1 class="title line-one">Over 50 Categories to Browse</h1>
+      <h1 class="title line-one">Over 50 — Categories To Browse</h1>
 
-      <label for="category">Category</label>
-      <input list="category" name="combo" id="combo" formControlName="category">
-      <datalist id="category">
-        <option value="Carabiner"></option>
-        <option value="Tent"></option>
-        <option value="Canoe"></option>
-        <option value="Kayak"></option>
-        <option value="Harness"></option>
-        <option value="Rope"></option>
-      </datalist>
+      <label for="category"></label>
+      <select  class="combo" name="category" id="combo" formControlName="category" value="select">
+        <option class="default" value="Select" selected>Select</option>
+        <option value="Carabiner">Carabiner</option>
+        <option value="Tent">Tent</option>
+        <option value="Canoe">Canoe</option>
+        <option value="Kayak">Kayak</option>
+        <option value="Harness">Harness</option>
+        <option value="Rope">Rope</option>
+      </select>
+      <button type="submit"></button>
 
 
 
@@ -31,4 +33,5 @@
   <div class="climbing category-container">
     <p class="category">Climbing</p>
   </div>
+</div>
 </div>

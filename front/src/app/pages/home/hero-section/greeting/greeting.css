@@ -1,7 +1,7 @@
 .greeting{
   font-weight: 800;
   line-height: 55px;
-  letter-spacing: -1.5px;
+  letter-spacing: -1.0px;
 }
 
 .tag{
@@ -16,8 +16,8 @@
 
 .sub-heading{
   line-height: 25px;
-  letter-spacing: 1.5px;
-  font-weight: 200;
+  letter-spacing: 1.2px;
+  font-weight: 300;
   font-size: 16px;
 }
 

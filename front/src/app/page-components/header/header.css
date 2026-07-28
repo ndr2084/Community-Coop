@@ -1,14 +1,12 @@
 .header{
-  height: auto;
+  height: fit-content;
   display: flex;
+  color: black;
+  background: white;
+  padding: 8px;
 
 }
 
-.glass{
-  box-shadow: none;
-  border: none;
-  border-radius: none;
-}
 
 .header > *{
   overflow: hidden;
@@ -77,6 +75,7 @@
   position: absolute;
   bottom: -5px;
   right: 5px;
+  color: black;
 }
 
 .profile{
@@ -84,5 +83,6 @@
   justify-content: center;
   align-items: center;
   padding-right: 8px;
+  color: black;
 }
 
