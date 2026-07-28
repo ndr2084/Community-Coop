@@ -3,7 +3,7 @@
   height: 100%;
   overflow: scroll;
 
-  background: linear-gradient(180deg, #343434 0%,  #6b8595 100%);
+  background: linear-gradient(180deg, #c3e6ef 0%,  #1a384c 100%);
   }
 
 app-header{
@@ -11,7 +11,6 @@ app-header{
   position: sticky;
   top: 0;
   z-index: 100000;
-  border-bottom: 1px solid rgb(143, 143, 143);
 }
 
 app-hero-section{

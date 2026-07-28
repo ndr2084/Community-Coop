@@ -5,10 +5,11 @@ import { UserIndexService } from '../../services/user-index-service';
 import { HeroSection } from "./hero-section/hero-section";
 import { CategorySection } from "./category-section/category-section";
 import { Footer } from "../../page-components/footer/footer";
+import { EssentialPicks } from "./essential-picks/essential-picks";
 
 @Component({
   selector: 'app-home',
-  imports: [Header, HeroSection, CategorySection, Footer],
+  imports: [Header, HeroSection, CategorySection, Footer, EssentialPicks],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

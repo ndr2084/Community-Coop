@@ -1,0 +1,53 @@
+:host{
+  display: block;
+  margin: 32px 16px;
+  padding: 6px;
+}
+.line-break{
+  width: 100%;
+  background: white;
+  size: 2;
+}
+
+.title-wrapper{
+  padding-left: 16px;
+}
+
+.wrapper{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  aspect-ratio: 1/1;
+  margin-top: 0;
+}
+
+.heading {
+  background: white;
+  color: black;
+  padding-left: calc(32px + 16px);
+  margin: 0;
+}
+
+.title{
+  color: white;
+  padding-left: calc(16px);
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s all;
+}
+
+.card:hover{
+  background: rgba(201, 201, 201, 0.449);
+}
+
+

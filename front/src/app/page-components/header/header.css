@@ -4,7 +4,11 @@
   color: black;
   background: white;
   padding: 8px;
+  gap: 16px;
+}
 
+input{
+  all: unset;
 }
 
 
@@ -22,6 +26,7 @@
   justify-content: center;
   align-items: center;
   font-size: 16px;
+  padding: 0 16px;
 }
 
 .logo{
@@ -36,10 +41,11 @@
 .shopping-utilities{
   flex-direction: row;
   display: flex;
+  flex-grow: 1;
 
 
   grid-column:10/16;
-  width: 100%;
+  width: fit-content;
   font-weight: 800;
   font-size: 12px;
 }
@@ -53,22 +59,43 @@
 }
 
 .header-button:hover{
-  background: rgba(216, 216, 216, 0.602);
+  background: rgb(245, 245, 245);
 }
 
-.search{
-  flex-direction: row;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  grid-column:23;
-  width: 35px;
-  height: 35px;
+.search-wrapper{
   position: relative;
-  justify-self: end;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+
+}
+.search{
+
+  width: 100%;
+  background: rgb(218, 218, 218);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+.go-button{
+  font-size: 12px;
+  position: absolute;
+  right: 0px;
+  background: rgb(151, 28, 28);
+  color: white;
+  padding: 0 4px;
+  height: 100%;
+  border-radius: 6px;
+  transition: 0.18s all;
   cursor: pointer;
+}
+
+.go-button:hover{
+  background: rgb(100, 15, 15);
 }
 
 .search-icon{

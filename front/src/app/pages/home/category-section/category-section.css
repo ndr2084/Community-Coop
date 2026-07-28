@@ -7,7 +7,7 @@
   padding: 8px;
   border-top: 0px;
   border: 10px solid white;
-  background: rgb(159, 186, 174);
+  background: rgb(196, 251, 206);
 }
 
 
@@ -68,7 +68,6 @@
 background: radial-gradient(circle, rgb(128, 127, 124) 0%, rgb(42, 76, 124) 66%);
   grid-row: 1/5;
   grid-column: 6/7;
-  border: 1px solid green;
 }
 
 .line-one{
