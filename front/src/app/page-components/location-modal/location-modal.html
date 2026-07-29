@@ -1,9 +1,22 @@
 <div class="dummy">
-<p></p>
+  <p></p>
 </div>
 
 <div class="modal-wrapper">
-  <button (click)="closeModal()">[X]</button>
-  <h1>Update Delivery Location</h1>
-  <p>enter your postalcode to check for resources near you</p>
+  <div class="title-wrapper">
+    <h1>Update Delivery Location</h1>
+    <div (click)="closeModal()">
+      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+      </svg>
+  </div>
+  </div>
+  <p class="description">Please enter your postalcode to check for resources near you</p>
+
+  <form [formGroup]="locationForm" (submit)="submitForm()">
+    <label for="postalCode"></label>
+    <input type="text" id="postalCode" formControlName="postalCode">
+    <button class="pr-btn">Update</button>
+    <button class="secondary-btn" (click)="closeModal()">Close</button>
+  </form>
 </div>
