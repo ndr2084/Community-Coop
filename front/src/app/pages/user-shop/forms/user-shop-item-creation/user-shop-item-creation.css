@@ -1,16 +1,33 @@
+:host{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
+  color: black;
+  flex-direction: row;
+  width: 30vw;
+  height: 100%;
+  animation: custom-dialog-enter 1.0s ease;
+  padding: 8px;
+}
+
+@keyframes custom-dialog-enter {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 .item-form{
   display: flex;
   flex-direction: column;
-  gap: calc(16px + 4px);
+  gap: 8px;
 }
 
 .close{
   cursor: pointer;
-}
-
-.modal-footer{
-  display: flex;
-  gap: 20px;
 }
 
 .modal-header{
@@ -24,5 +41,57 @@
 }
 
 .check-box:checked{
-  background: rgb(34, 116, 165);
+  background: rgb(0, 0, 0);
+}
+
+input{
+all: unset;
+background: white;
+border: 1px solid black;
+
+width: fit-content;
+}
+
+input#picture{
+  all:unset;
+}
+
+.pr-btn{
+  color: white;
+  background: black;
+  padding: 8px;
+  cursor: pointer;
+
+}
+
+.secondary-btn{
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button-wrapper{
+  display: flex;
+  gap: 16px;
+}
+
+.rent-sale{
+  display: flex;
+  gap: 16px;
+  color: rgb(61, 61, 61);
+  align-items: center;
+}
+
+.is-for{
+  color: black;
+}
+
+#description{
+  width: 75%;
+  height: 100px;
+}
+
+form{
+  font-weight: 200;
 }

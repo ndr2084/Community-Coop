@@ -2,8 +2,10 @@
   display: block;
   height: 100%;
   overflow: scroll;
+  background: linear-gradient(180deg, #ffffff 0%,  #0c1b3a 100%);
+  margin: 8px;
+  background: rgb(43, 77, 46);
 
-  background: linear-gradient(180deg, #c3e6ef 0%,  #1a384c 100%);
   }
 
 app-header{
@@ -14,14 +16,13 @@ app-header{
 }
 
 app-hero-section{
-  border: 10px solid white;
+
   display: block;
   flex-direction: column;
   gap: 8px;
   height: fit-content;
   overflow: hidden;
-  margin: 32px;
-  margin-bottom: 4px;
+
 
 }
 
@@ -32,12 +33,12 @@ app-category-section{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 4px 32px;
+
+
 }
 
 app-footer{
   display: block;
   height: fit-content;
-  padding: 4px 32px 32px 32px;
 }
 

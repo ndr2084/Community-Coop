@@ -1,37 +1,36 @@
-<div class="modal-overlay">
-  <div class="modal-container">
-    <div class="modal-header">
-      <h2>Add an Item to your store</h2>
-      <button class="close" (click)="close()">[ x ]</button>
-    </div>
-    <div class="modal-body">
-      <form [formGroup]="itemForm" class="item-form">
-
-        <label for="item-name">Item Name: </label>
-        <input type="text" id="item-name" formControlName="name">
-
-        <label for="item-price">Price: </label>
-        <input type="number" id="item-price" formControlName="price">
-
-        <label for="is-for-rent">This item is for rent?</label>
-        <input type="checkbox" class="check-box"id="is-for-rent" formControlName="isForRent">
-
-        <label for="is-for-sale">This item is for sale?</label>
-        <input type="checkbox" class="check-box" id="is-for-sale" formControlName="isForSale">
-
-        <label for="condition">Condition: </label>
-        <input type="range" name="condition" id="condition" formControlName="condition">
-
-        <label for="picture">Photo</label>
-        <input type="file" name="picture" id="picture" (change)="onFileSelect($event)" multiple>
-
-        <label for="description">Description: </label>
-        <textarea name="description" id="description" formControlName="description"></textarea>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button class="button-text"(click)="confirm()" type="submit">Confirm</button>
-      <button class="button-text"(click)="close()">Cancel</button>
-    </div>
-  </div>
+<div class="modal-header">
+  <h2>Add an Item to your store</h2>
+  <button class="close" (click)="close()">[ x ]</button>
 </div>
+<form [formGroup]="itemForm" class="item-form">
+
+  <label for="item-name">Item Name: </label>
+  <input type="text" id="item-name" formControlName="name">
+
+  <label for="item-price">Price: </label>
+  <input type="number" id="item-price" formControlName="price">
+
+  <div class="rent-sale">
+    <label for="is-for" class="is-for">This item is for: </label>
+    <label for="is-for-rent">sale</label>
+    <input type="checkbox" class="check-box" id="is-for-rent" formControlName="isForRent">
+    <label for="is-for-sale">rent</label>
+    <input type="checkbox" class="check-box" id="is-for-sale" formControlName="isForSale">
+  </div>
+
+
+
+  <label for="picture">Photo</label>
+  <input type="file" name="picture" id="picture" (change)="onFileSelect($event)" multiple>
+
+  <label for="description">Description: </label>
+  <textarea name="description" id="description" formControlName="description"></textarea>
+
+  <div class="button-wrapper">
+    <button class="pr-btn" (click)="confirm()" type="submit">Confirm</button>
+    <button class="secondary-btn" (click)="close()">Cancel</button>
+  </div>
+
+</form>
+
+
