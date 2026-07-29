@@ -1,26 +1,25 @@
 
 
 :host{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  height: 100%;
-}
-
-.dummy{
-  width: 100%;
-  height: 100%;
-}
-
-.modal-wrapper{
-  padding: 8px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  filter: drop-shadow(0 0 2em rgba(2black, 0.5));
-  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
   color: black;
-  z-index: 10;
+  flex-direction: row;
+  width: 30vw;
+  height: 100%;
+  animation: custom-dialog-enter 1.0s ease;
+}
+
+@keyframes custom-dialog-enter {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 .description{
@@ -28,6 +27,7 @@
 }
 
 form{
+  padding: 8px;
   display: flex;
   gap: 8px;
 }
@@ -52,18 +52,18 @@ form{
   cursor: pointer;
 }
 
-.title-wrapper{
-  display: flex;
-  justify-content: space-between;
-  padding: 0 4px;
-}
-
 .close-icon{
   cursor: pointer;
   border-radius: 100%;
   border: 1px solid black;
   height: fit-content;
   padding: 4px;
+}
+
+.title-and-close-btn{
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
 }
 
 
