@@ -9,7 +9,7 @@ import { DialogRef } from '@angular/cdk/dialog';
   styleUrl: './accordian-modal.css',
 })
 export class AccordianModal {
-  items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  items = ['Climbing Gear', 'Camping & Tents', 'Sleeping Bags & Pads', 'Backpacks & Bags', 'Camp Kitchen & Cookware'];
   expandedIndex = 0;
 
   dialogRef = inject(DialogRef,{
