@@ -1,2 +1,4 @@
-<img src="{{itemList()[itemIndex]?.picture}}" alt="">
+@for(picture of itemList()[itemIndex]?.picture ; track picture){
+<img src="{{picture}}" alt="">
+}
 
