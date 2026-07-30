@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Dialog } from '@angular/cdk/dialog';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import { AccordianModal } from './accordian-modal/accordian-modal';
 
 @Component({
   selector: 'app-category-section',
@@ -9,8 +11,14 @@ import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 })
 export class CategorySection {
 
-  searchCategory = new FormGroup({
-    category : new FormControl('')
-  });
+  dialog = inject(Dialog);
+
+  openModal(){
+    this.dialog.open(AccordianModal, {
+      disableClose: true,
+      height: '100%',
+      width: '100%'
+    })
+  }
 
 }

@@ -61,6 +61,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   height: 400px;
@@ -68,6 +69,7 @@
 background: radial-gradient(circle, rgb(128, 127, 124) 0%, rgb(42, 76, 124) 66%);
   grid-row: 1/5;
   grid-column: 6/7;
+  gap: 16px;
 }
 
 .line-one{
@@ -76,7 +78,7 @@ background: radial-gradient(circle, rgb(128, 127, 124) 0%, rgb(42, 76, 124) 66%)
   letter-spacing: -2px;
   line-height: 65px;;
   background: black;
-  border-radius: 8px;
+  border-radius: 0px;
   padding: 32px;
 }
 
@@ -110,19 +112,6 @@ background: radial-gradient(circle, rgb(128, 127, 124) 0%, rgb(42, 76, 124) 66%)
   height: 100%;
 }
 
-
-.combo{
-  all: unset;
-  width: fit-content;
-  padding: 16px 32px;
-  border-radius: 12px;
-  background: rgb(234, 248, 157);
-  color: black;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 1000;
-}
-
 .quicklinks{
   color: black;
   background: white;
@@ -133,4 +122,18 @@ background: radial-gradient(circle, rgb(128, 127, 124) 0%, rgb(42, 76, 124) 66%)
 
 .default{
   color: black;
+}
+
+.browse-button{
+  background: rgb(151, 28, 28);
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 24px;
+  transition: 0.18s ease all;
+}
+
+.browse-button:hover{
+  background: rgb(100, 15, 15);
 }

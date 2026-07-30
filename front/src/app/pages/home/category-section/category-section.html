@@ -5,24 +5,8 @@
     <p class="category">Canoes & Kayaks</p>
   </div>
   <div class="rectangle">
-    <form [formGroup]="searchCategory" class="category-search-form" submit="submitForm()">
       <h1 class="title line-one">Over 50 — Categories To Browse</h1>
-
-      <label for="category"></label>
-      <select  class="combo" name="category" id="combo" formControlName="category" value="select">
-        <option class="default" value="Select" selected>Select</option>
-        <option value="Carabiner">Carabiner</option>
-        <option value="Tent">Tent</option>
-        <option value="Canoe">Canoe</option>
-        <option value="Kayak">Kayak</option>
-        <option value="Harness">Harness</option>
-        <option value="Rope">Rope</option>
-      </select>
-      <button type="submit"></button>
-
-
-
-    </form>
+      <button type="submit" class="browse-button" (click)="openModal()">browse</button>
   </div>
   <div class="books category-container">
     <p class="category">Books & Resources</p>
