@@ -50,6 +50,7 @@ export class UserShopService {
   }
 
   setCurrentIndex(index: number){
+    console.log(`current index:` + index);
     this.currentIndex = index;
 }
 

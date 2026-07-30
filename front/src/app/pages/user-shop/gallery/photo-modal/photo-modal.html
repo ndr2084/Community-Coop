@@ -1,4 +1,22 @@
-@for(picture of itemList()[itemIndex]?.picture ; track picture){
-<img src="{{picture}}" alt="">
-}
-
+<div class="carousel">
+  <div class="carousel-viewport">
+    <button (click)="closeModal()" class="closeModal">CLOSE</button>
+    <div class="carousel-track" [style.transform]="computedSlide()">
+      @for(picture of itemList()[itemIndex]?.picture ; track picture){
+        <img src="{{picture}}" alt="" class="photo">
+      }
+    </div>
+    <div class="current-photo-indicator">
+      @for(picture of itemList()[itemIndex]?.picture ; track $index; let i = $index){
+      @if(i === this.currentIndex()){
+      <li class="pagination">.</li>
+      }
+      @else{
+        <li class="pagination" [style.color]="'white'">.</li>
+      }
+    }
+    </div>
+  </div>
+  <button class="carousel-btn next" (click)="next()" aria-label="Next slide">next</button>
+  <button class="carousel-btn prev" (click)="prev()" aria-label="Previous slide">prev</button>
+</div>
