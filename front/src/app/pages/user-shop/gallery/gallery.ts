@@ -15,35 +15,20 @@ import { PhotoModal } from './photo-modal/photo-modal';
 })
 export class Gallery {
 
-  //SCROLLING
-  left_scroll = document.querySelector(".left");
-  right_scroll = document.querySelector(".right");
-
 
   //SERVICES
-  index = inject(UserIndexService);
   userShopService = inject(UserShopService);
 
 
   //EXTERNAL VARIABLES
   readonly itemList = this.userShopService.items();
 
-  //CAROUSEL FUNCITONALITY
-
-  slideIndex: number = 1;
-  slide = document.querySelectorAll("slide-container");
-
-  scrollLeft(n: number){
-    console.log(this.slide);
-  };
-  scrollRight(n: number){
-    this.right_scroll?.scrollTo({left: -325, behavior: 'smooth'})
-  };
 
   //open modal
   dialog = inject(Dialog);
 
-  openDialog(): void {
+  openDialog(index: number): void {
+    this.userShopService.setCurrentIndex(index);
     this.dialog.open<string>(PhotoModal, {
       disableClose: true,
       height: '100%',

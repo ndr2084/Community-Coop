@@ -1,22 +1,22 @@
 @for(item of itemList() ; track item.id){
-<div class="shop-item">
-    <img class="picture" src="{{item.picture[0]}}" alt="{{item.name}}" (click)="openDialog()">
+  <div class="shop-item">
+      <img class="picture" src="{{item.picture[0]}}" alt="{{item.name}}" (click)="openDialog($index)">
 
-  <div class="item-meta-data">
+    <div class="item-meta-data">
 
-    <div class="name-and-price ">
-      <p>{{item.name}}</p>
+      <div class="name-and-price ">
+        <p>{{item.name}}</p>
+      </div>
+      <div class="sell-and-rental-status">
+        <p class="price">excellent condition{{item.condition}}</p>
+        @if(item.isForRent){
+          <p class=" price"> rent for ${{item.price}} / day</p>
+        }
+        @if(item.isForSale){
+        <p class="price"> purchase for $800</p>
+        }
+      </div>
+      <p class="description">{{item.description}}</p>
     </div>
-    <div class="sell-and-rental-status">
-      <p class="price">excellent condition{{item.condition}}</p>
-      @if(item.isForRent){
-        <p class=" price"> rent for ${{item.price}} / day</p>
-      }
-      @if(item.isForSale){
-      <p class="price"> purchase for $800</p>
-      }
-    </div>
-    <p class="description">{{item.description}}</p>
   </div>
-</div>
-}
+  }

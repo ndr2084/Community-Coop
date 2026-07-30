@@ -6,9 +6,12 @@ import { Injectable, signal, computed } from '@angular/core';
 export class UserShopService {
   //PRIVATE
   private readonly __items = signal<Item[]>([]);
+  private currentIndex = 0;
 
   //PUBLIC
   readonly items = this.__items.asReadonly;
+
+
 
   //CRUD  OPERATIONS
   create(
@@ -44,6 +47,14 @@ export class UserShopService {
       (list) => list.filter(
       (item) => item.id !== id
       ))
+  }
+
+  setCurrentIndex(index: number){
+    this.currentIndex = index;
+}
+
+  getCurrentIndex(){
+    return this.currentIndex;
   }
 }
 
