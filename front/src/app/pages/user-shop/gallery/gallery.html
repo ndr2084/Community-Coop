@@ -3,7 +3,7 @@
   <div class="carousel" aria-label="image carousel">
     @for(picture of item.picture ; track picture)
     {
-    <img class="picture" src="{{picture}}" alt="{{item.name}}">
+    <img class="picture" src="{{picture}}" alt="{{item.name}}" (click)="openDialog()">
     }
   </div>
 

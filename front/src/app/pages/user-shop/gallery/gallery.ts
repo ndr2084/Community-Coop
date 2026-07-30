@@ -4,6 +4,7 @@ import { UserShopService } from '../../../services/user-shop-service';
 import { Dialog } from '@angular/cdk/dialog';
 import { UserShopItemCreation } from '../forms/user-shop-item-creation/user-shop-item-creation';
 import { Panel } from "../panel/panel";
+import { PhotoModal } from './photo-modal/photo-modal';
 
 
 @Component({
@@ -38,4 +39,15 @@ export class Gallery {
   scrollRight(n: number){
     this.right_scroll?.scrollTo({left: -325, behavior: 'smooth'})
   };
+
+  //open modal
+  dialog = inject(Dialog);
+
+  openDialog(): void {
+    this.dialog.open<string>(PhotoModal, {
+      disableClose: true,
+      height: '100%',
+      width: '100%',
+    });
+  }
 }

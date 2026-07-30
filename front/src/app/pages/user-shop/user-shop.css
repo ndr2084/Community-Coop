@@ -2,16 +2,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid black;
-  margin: 3px;
-  border-radius: 8px;
   overflow: hidden;
 }
 
-app-header{
-  width: 100%;
-  height: fit-content;
-}
+
 
 .shop-content{
   display: flex;

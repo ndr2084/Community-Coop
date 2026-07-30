@@ -8,6 +8,8 @@ import { Router } from '@angular/router'
 import { UserIndex } from '../../entity/user-index';
 import { UserIndexService } from '../../services/user-index-service';
 import { first } from 'rxjs';
+import { Dialog } from '@angular/cdk/dialog';
+import { PhotoModal } from '../user-shop/gallery/photo-modal/photo-modal';
 
 @Component({
   selector: 'app-signup',
@@ -68,9 +70,5 @@ export class Signup {
     }
     this.signUpFormAutoFill.picture = URL.createObjectURL(file);
   }
-
-
-
-
 }
 
