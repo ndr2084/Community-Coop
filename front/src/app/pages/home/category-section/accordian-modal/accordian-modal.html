@@ -10,12 +10,13 @@
       [attr.aria-controls]="'accordion-body-' + index">
       {{ item }}
       <span class="example-accordion-item-description">
-        Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+        {{ accordionItem.expanded ? '-' : '+' }}
       </span>
     </button>
-    @if(accordionItem.expanded) {
-    <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+    <!--SOFT ACCORDIAN OPEN LOGIC BEGINS-->
+    <div class="example-accordion-item-body" role="region" [class.expanded]="accordionItem.expanded"
       [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
+      <div class="example-accordion-item-body-inner">
       @if($index === 0){
       <div class="card-container">
         <div class="card">
@@ -150,8 +151,9 @@
         </div>
       </div>
       }
+      </div>
     </div>
-    }
+    <!--SOFT ACCORDIAN OPEN LOGIC ENDS-->
   </cdk-accordion-item>
 
   }

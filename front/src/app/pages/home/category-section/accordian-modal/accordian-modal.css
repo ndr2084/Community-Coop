@@ -1,21 +1,36 @@
 :host{
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
   color: black;
+  width: 800px;
+  animation: transition 0.32s ease-out;
+}
+
+@keyframes transition {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .example-accordion {
   display: block;
-  width: 750px;
+  margin: 0 auto;
+  width: 100%;
   height: 100%;
 }
 
 .example-accordion-item {
   display: block;
   border: solid 1px #ccc;
+  padding: 16px;
 }
 
 .example-accordion-item + .example-accordion-item {
@@ -34,13 +49,32 @@
 }
 
 .example-accordion-item-description {
-  font-size: 0.85em;
+  font-size: 1.2em;
   color: #999;
 }
 
+/*SOFT ACCORDIAN OPEN LOGIC BEGINS*/
 .example-accordion-item-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.example-accordion-item-body.expanded {
+  grid-template-rows: 1fr;
+}
+
+.example-accordion-item-body-inner {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0 16px;
+  transition: padding 0.3s ease;
+}
+
+.example-accordion-item-body.expanded .example-accordion-item-body-inner {
   padding: 16px;
 }
+/*SOFT ACCORDIAN OPEN LOGIC ENDS*/
 
 .example-accordion-item-header:hover {
   cursor: pointer;
