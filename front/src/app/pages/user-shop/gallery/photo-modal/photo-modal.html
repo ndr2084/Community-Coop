@@ -1,6 +1,6 @@
 <div class="carousel">
   <div class="carousel-viewport">
-    <button (click)="closeModal()" class="closeModal">CLOSE</button>
+    <button (click)="closeModal()" class="closeModal">x</button>
     <div class="carousel-track" [style.transform]="computedSlide()">
       @for(picture of itemList()[itemIndex]?.picture ; track picture){
         <img src="{{picture}}" alt="" class="photo">
@@ -17,6 +17,13 @@
     }
     </div>
   </div>
-  <button class="carousel-btn next" (click)="next()" aria-label="Next slide">next</button>
-  <button class="carousel-btn prev" (click)="prev()" aria-label="Previous slide">prev</button>
+  <button class="carousel-btn next" (click)="next()" aria-label="Next slide">
+
+      <p class="next-btn">❯</p>
+
+  </button>
+  <button class="carousel-btn prev" (click)="prev()" aria-label="Previous slide">
+      <p class="prev-btn">❮</p>
+
+  </button>
 </div>

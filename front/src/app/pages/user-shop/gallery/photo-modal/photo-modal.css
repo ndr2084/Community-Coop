@@ -7,7 +7,7 @@
 
 .photo{
     display: block;
-    height: 250px;
+    height: 600px;
     aspect-ratio: 1/1;
     display: flex;
     align-items: center;
@@ -19,8 +19,7 @@
 
 .carousel {
   display: block;
-  width: 250px;
-  max-width: 640px;
+  width: 600px;
   margin: 2rem auto;
   border: 1px solid black;
   padding: 8px;
@@ -34,22 +33,19 @@
   position: absolute;
   cursor: pointer;
   color: black;
-  border-radius: 50%;
-  width: 20px;
-  padding: 20px;
   font-weight: 300;
 }
 
 .prev{
   position: absolute;
-  top: 80%;
-  left: 30px;
+  top: 50%;
+  left: 25px;
 }
 
 .next{
   position: absolute;
-  top: 80%;
-  right: 30px;
+  top: 50%;
+  right: 25px;
 }
 
 .carousel-viewport {
@@ -84,16 +80,28 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  padding: 4px;
+  padding: 4px 10px;
   font-weight: 300;
   letter-spacing: -0.25px;
   background: rgb(187, 187, 187);
-  transition: 1s ease all;
+  transition: 0.18s all;
   cursor: pointer;
 }
 
 .closeModal:hover{
-  background: rgb(194, 190, 190);
+  background: rgb(78, 76, 76);
+  color: white;
+}
+
+.prev-btn, .next-btn{
+  background: rgba(0, 0, 0, 0.627);
+  border-radius: 50%;
+
+  color: white;
+  font-size: 20px;
+  padding: 9px 17px;
+  font-weight: 500;
+
 }
 
 
