@@ -2,6 +2,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 import { AccordianModal } from './accordian-modal/accordian-modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-section',
@@ -12,6 +13,7 @@ import { AccordianModal } from './accordian-modal/accordian-modal';
 export class CategorySection {
 
   dialog = inject(Dialog);
+  router = inject(Router);
 
   openModal(){
     this.dialog.open(AccordianModal, {
@@ -21,4 +23,26 @@ export class CategorySection {
     })
   }
 
+  redirect(uriName: string) {
+    if(uriName === 'CanoesKayaks'){
+      console.log("booty");
+      this.router.navigateByUrl("shop/watersports/canoes-kayaks");
+    }
+    if(uriName === 'books'){
+      this.router.navigateByUrl("shop/education/books");
+    }
+
+    if(uriName === 'crashpads'){
+      this.router.navigateByUrl("shop/climbing/crash-pads");
+    }
+
+    if(uriName === 'tents'){
+      this.router.navigateByUrl("shop/camping/tents");
+    }
+
+    if(uriName ==='shop'){
+      this.router.navigateByUrl("shop");
+    }
+
+  }
 }

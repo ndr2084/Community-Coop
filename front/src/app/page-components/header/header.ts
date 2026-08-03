@@ -38,4 +38,8 @@ export class Header {
   viewCart(){
     this.router.navigateByUrl("cart")
   }
+
+  browseAll(){
+    this.router.navigateByUrl("shop");
+  }
 }

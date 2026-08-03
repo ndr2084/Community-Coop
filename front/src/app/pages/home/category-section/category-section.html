@@ -1,20 +1,20 @@
 <div class="border">
 <h1 class="quicklinks">Quick Links</h1>
 <div class="grid-wrapper">
-  <div class="portage category-container">
+  <div class="portage category-container" (click)="redirect(`CanoesKayaks`)">
     <p class="category">Canoes & Kayaks</p>
   </div>
   <div class="rectangle">
       <h1 class="title line-one">Over 50 — Categories To Browse</h1>
-      <button type="submit" class="browse-button" (click)="openModal()">browse</button>
+      <button type="submit" class="browse-button" (click)="redirect(`shop`)">browse</button>
   </div>
-  <div class="books category-container">
+  <div class="books category-container" (click)="redirect(`books`)">
     <p class="category">Books & Resources</p>
   </div>
-  <div class="camping category-container">
-    <p class="category">Camping</p>
+  <div class="camping category-container" (click)="redirect(`tents`)">
+    <p class="category" >Camping</p>
   </div>
-  <div class="climbing category-container">
+  <div class="climbing category-container" (click)="redirect(`crashpads`)">
     <p class="category">Climbing</p>
   </div>
 </div>
