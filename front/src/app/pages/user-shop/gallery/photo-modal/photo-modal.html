@@ -1,6 +1,11 @@
 <div class="carousel">
   <div class="carousel-viewport">
-    <button (click)="closeModal()" class="closeModal">x</button>
+    <button (click)="closeModal()" class="closeModal">
+      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+      fill="#000000">
+      <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+    </svg>
+    </button>
     <div class="carousel-track" [style.transform]="computedSlide()">
       @for(picture of itemList()[itemIndex]?.picture ; track picture){
         <img src="{{picture}}" alt="" class="photo">

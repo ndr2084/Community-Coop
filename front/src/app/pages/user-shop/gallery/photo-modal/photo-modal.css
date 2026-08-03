@@ -18,11 +18,11 @@
 }
 
 .carousel {
-  display: block;
+  display: flex;
   width: 600px;
   margin: 2rem auto;
   border: 1px solid black;
-  padding: 8px;
+  padding: 32px;
   padding-top: 32px;
 
 
@@ -78,18 +78,22 @@
 .closeModal{
   color: black;
   position: absolute;
-  top: 0px;
+  display: flex;
+top: 0;
+right: 0;
+  z-index: 20;
   right: 0px;
-  padding: 4px 10px;
+  top: 0px;
+  padding: 8px 8px ;
   font-weight: 300;
   letter-spacing: -0.25px;
-  background: rgb(187, 187, 187);
+
   transition: 0.18s all;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .closeModal:hover{
-  background: rgb(78, 76, 76);
   color: white;
 }
 
