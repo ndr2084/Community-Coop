@@ -6,14 +6,14 @@ import { Shop } from './pages/shop/shop';
 import { UserShop } from './pages/user-shop/user-shop';
 import { OrderHistory } from './pages/order-history/order-history';
 import { Cart } from './pages/cart/cart';
-import { Watersports } from './pages/shop/watersports/watersports';
-import { CanoesKayaks } from './pages/shop/watersports/canoes-kayaks/canoes-kayaks';
-import { Climbing } from './pages/shop/climbing/climbing';
-import { Crashpads } from './pages/shop/climbing/crashpads/crashpads';
-import { Education } from './pages/shop/education/education';
-import { Books } from './pages/shop/education/books/books';
-import { Camping } from './pages/shop/camping/camping';
-import { Tents } from './pages/shop/camping/tents/tents';
+import { Watersports } from './pages/shop/sub-pages/watersports/watersports';
+import { CanoesKayaks } from './pages/shop/sub-pages/watersports/canoes-kayaks/canoes-kayaks';
+import { Climbing } from './pages/shop/sub-pages/climbing/climbing';
+import { Crashpads } from './pages/shop/sub-pages/climbing/crashpads/crashpads';
+import { Education } from './pages/shop/sub-pages/education/education';
+import { Books } from './pages/shop/sub-pages/education/books/books';
+import { Camping } from './pages/shop/sub-pages/camping/camping';
+import { Tents } from './pages/shop/sub-pages/camping/tents/tents';
 
 
 export const routes: Routes = [

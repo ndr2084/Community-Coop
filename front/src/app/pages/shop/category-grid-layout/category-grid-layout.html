@@ -1,0 +1,12 @@
+@for (category of categories; track category){
+<div class="card" (click)="updateSignal(category)">
+
+
+  @if(this.isActive() === category){
+    <p>test</p>
+  }
+  @else {
+    {{category}}
+  }
+</div>
+}
