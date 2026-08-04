@@ -1,29 +1,30 @@
+:host{
+  display: block;
+  height: 100%;
+  overflow: scroll;
+}
+
 .banner{
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   background: rgb(43, 77, 46);
-  height: 200px;
   font-size: 32px;
   gap: 12px;
 }
 
-.shopping-layout{
-  display: flex;
-  background: white;
-  width: 100%;
-  gap: 8px;
+app-header{
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-.filter{
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: black;
+
+app-category-picker{
+  width: fit-content;
+  padding: 8px;
 }
 
-.category-section{
-  flex-grow: 1;
-}
+

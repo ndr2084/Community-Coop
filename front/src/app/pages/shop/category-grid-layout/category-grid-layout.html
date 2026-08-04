@@ -1,12 +1,18 @@
-@for (category of categories; track category){
-<div class="card" (click)="updateSignal(category)">
+@for (category of categories; track category.name){
+<div class="card" (click)="updateSignal(category.name)">
 
+  @if(this.isActive() === category.name){
+  @for(subcategory of category.subcategories; track subcategory){
+  <p class="subcategory">
+    {{subcategory}}
+  </p>
+  }
+  }
+  @else{
+  <p class="category">
+    {{category.name}}
+  </p>
+  }
 
-  @if(this.isActive() === category){
-    <p>test</p>
-  }
-  @else {
-    {{category}}
-  }
 </div>
 }
