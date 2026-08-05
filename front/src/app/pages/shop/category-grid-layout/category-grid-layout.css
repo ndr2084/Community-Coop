@@ -13,10 +13,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .subcategory{
   padding: 8px;
+  cursor: pointer;
 }
 
 .subcategory:hover{

@@ -1,4 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-grid-layout',
@@ -7,6 +8,7 @@ import { Component, inject, signal } from '@angular/core';
   styleUrl: './category-grid-layout.css',
 })
 export class CategoryGridLayout {
+
 
   /*TODO: this is fake data that you'll eventually put in your db*/
   categories = [
@@ -290,13 +292,22 @@ export class CategoryGridLayout {
   ];
   isActive = signal<string | boolean>(false);
 
-  updateSignal(category: string){
+  updateSignal(category: string) {
     console.log(category);
     //if this has already been selected and the user clicked on it again, then stop showing sub-categories for given card
+    /*
     if(this.isActive() === category){
       return this.isActive.set(false);
     }
+      */
     //otherwise, open up the subcategories of the selected card
     return this.isActive.set(category);
+  }
+
+  router = inject(Router);
+  redirect(uriName: string) {
+    if (uriName === 'shop') {
+      this.router.navigateByUrl("shop");
+    }
   }
 }
